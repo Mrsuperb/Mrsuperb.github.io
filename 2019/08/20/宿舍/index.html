@@ -4,8 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="宿舍, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
-    <meta name="description" content="宿舍 | B先生的博客">
+    <meta name="keywords" content="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="description" content="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+配置：ubuntu19.04显卡：GEFORCE 840M啊啊啊  好垃圾的笔记本。。。没想到还能支持GPU加速 同学们">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>宿舍 | B先生的博客</title>
+    <title>Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | B先生的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        宿舍
+                        Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
                     </div>
                 </div>
             </div>
@@ -404,7 +405,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</p>
+<p>配置：ubuntu19.04<br>显卡：GEFORCE 840M<br>啊啊啊  好垃圾的笔记本。。。没想到还能支持GPU加速 同学们是不是难以置信了</p>
+<h1 id="一-Ubuntu19-04安装"><a href="#一-Ubuntu19-04安装" class="headerlink" title="一  Ubuntu19.04安装"></a>一  Ubuntu19.04安装</h1><p>网络上有很多文章，首先博主是根据B站UP主上的视频一步一步走下来的，有一个视频是讲双系统的，楼主垃圾笔记本一台装了ubuntu和win10双系统，有需要的同学可以上B站搜一下ubuntu安装这里就不放链接了。</p>
+<h2 id="二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"><a href="#二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！" class="headerlink" title="二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"></a>二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！</h2><p>登录网站   <a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-gpus</a><br>首先看看自己的显卡支不支持tensorflow—GPU</p>
+<p><img src="https://img-blog.csdnimg.cn/2019050413481569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>博主的老爷车GEFORCE 840M 竟然在里面！难以置信</p>
+<h2 id="三-安装显卡驱动"><a href="#三-安装显卡驱动" class="headerlink" title="三  安装显卡驱动"></a>三  安装显卡驱动</h2><p>楼主小白一枚 实在不明白又是禁用源驱动 又是一堆的神奇操作 选用了所有博主最不推荐的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ubuntu-drivers autoinstall</span><br></pre></td></tr></table></figure>
+
+<p>  博主选了一堆yes 由于之前安装过了 这里就不放截图了。安装完后印象里会安装好几个显卡驱动，通过ubuntu里面的软件与更新<img src="https://img-blog.csdnimg.cn/20190504135458560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>里面的附加驱动使用了418这个版本。安装完显卡驱动后重新启动下电脑，在终端运行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190504135844182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>说明显卡驱动安装成功，万里长城第一步啊。接下来就是安装CUDA和cuDNN</p>
+<h2 id="四-安装CUDA"><a href="#四-安装CUDA" class="headerlink" title="四 安装CUDA"></a>四 安装CUDA</h2><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个是显卡驱动对应的CUDA版本我们安装的显卡驱动版本是418.56&gt;418.39 所以博主选用的CUDA是10.0版本。<br>然后同学们 去<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x cuda_10<span class="number">.0</span><span class="number">.130</span>_410<span class="number">.48</span>_linux.run</span><br><span class="line">sudo ./cuda_10<span class="number">.0</span><span class="number">.130</span>_410<span class="number">.48</span>_linux.run -overrid</span><br></pre></td></tr></table></figure>
+
+<p>注意上面的数字根据自己下载的版本号更改<br>在安装CUDA的时候 注意不要安装CUDA所带的驱动 由于我们之前安装了显卡驱动了 所以不需要重复安装</p>
+<p>然后就是配置环境 输入终端命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~<span class="regexp">/.bashrc</span></span><br></pre></td></tr></table></figure>
+
+<p>进入编辑模式将下面两条命令加入文档最后面：下面的序列号也需要根据自己的CUDA版本号更改</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> PATH=<span class="regexp">/usr/</span>local/cuda<span class="number">-10.0</span>/bin:$PATH</span><br><span class="line"><span class="keyword">export</span> LD_LIBRARY_PATH=<span class="regexp">/usr/</span>local/cuda<span class="number">-10.0</span>/lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+
+<p>加入后在终端输入，从而使得环境生效</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~<span class="regexp">/.bashrc</span></span><br></pre></td></tr></table></figure>
+
+<p>在终端输入，即可得到我们的CUDA信息 10.0.130</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+
+<p>现实如下 可见我们安装的CUDA版本为10.0.130</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">maqiushuo@maqiushuo-Aspire-E5<span class="number">-572</span>G:~$ nvcc -V</span><br><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) <span class="number">2005</span><span class="number">-2018</span> NVIDIA Corporation</span><br><span class="line">Built on Sat_Aug_25_21:<span class="number">08</span>:<span class="number">01</span>_CDT_2018</span><br><span class="line">Cuda compilation tools, release <span class="number">10.0</span>, V10<span class="number">.0</span><span class="number">.130</span></span><br></pre></td></tr></table></figure>
+
+<p>验证<br>打开终端输入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/cuda/samples/<span class="number">1</span>_Utilities/deviceQuery </span><br><span class="line">sudo make</span><br><span class="line">./deviceQuery</span><br></pre></td></tr></table></figure>
+
+<p>得到以下结果，及说名CUDA安装成功<br><img src="https://img-blog.csdnimg.cn/20190521211742747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="五-安装cuDNN"><a href="#五-安装cuDNN" class="headerlink" title="五 安装cuDNN"></a>五 安装cuDNN</h2><p>打开网站<br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
+<p>下载自己需要的cuDNN</p>
+<p><img src="https://img-blog.csdnimg.cn/20190504145205682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我下载的版本为 10.0    下的   cuDNN library for linux<br>下载完成后输入以下命令<br>首先进入你下载文件的文件夹<br>然后解压文件运行以下代码，注意 解压的文件是你下载的文件。。我这里只是提供个例子，当时下载的到底是什么名字我也忘了，所以下面代码的第一行是解压你下载的安装包.要根据你自己的cudnn版本号更改的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf cudnn<span class="number">-10.0</span>-linux-x64-v7<span class="number">.5</span><span class="number">.0</span><span class="number">.56</span>.tgz</span><br><span class="line">sudo cp cuda/include/cudnn.h /usr/local/cuda/include</span><br><span class="line">sudo cp cuda/lib64/libcudnn* <span class="regexp">/usr/</span>local/cuda/lib64</span><br><span class="line">sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</span><br></pre></td></tr></table></figure>
+
+<p>到这里cuDNN也已经配置完成</p>
+<h2 id="安装anaconda-以及tensorflow-gpu"><a href="#安装anaconda-以及tensorflow-gpu" class="headerlink" title="安装anaconda 以及tensorflow-gpu"></a>安装anaconda 以及tensorflow-gpu</h2><p>1.安装anaconda</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3<span class="number">-5.2</span><span class="number">.0</span>-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+
+<p>2.在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n tensorflow pip python=<span class="number">3.6</span></span><br></pre></td></tr></table></figure>
+
+<p>3.激活tensorflow(之前安装的虚拟环境)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source activate tensorflow</span><br></pre></td></tr></table></figure>
+
+<p>4.安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)<br>注意不同版本的tensorflow-gpu 对应的CUDA也是不同的<br><a href="https://www.tensorflow.org/install/source" target="_blank" rel="noopener">https://www.tensorflow.org/install/source</a>  从这个网站查找对应你CUDA版本的gpu，我的电脑不能翻墙只能放一张老图<br><img src="https://img-blog.csdnimg.cn/20190504151111420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从以上对应版本号上安装对应版本的tensorflow-gpu</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu == “你的版本”</span><br></pre></td></tr></table></figure>
+
+<p> 5.验证<br><img src="https://img-blog.csdnimg.cn/20190504151306674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br> 打开终端，激活tensorflow，输入python，输入import tensorflow as tf<br> 不报错！！！！！！就安装成功了！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！<br> 博主安装了两天，第二天凌晨4点安装成功。。哎。现在想想真的是浪费生命啊<br> 之前博主安装的是CUDA10.1，死活不兼容，后来博主百度查到，应该是anaconda公司没有更新，所以导致对CUDA10.1的不兼容。</p>
+<p> 参考文档如下</p>
+
             </div>
             <hr/>
 
@@ -562,7 +618,7 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《宿舍》
+                    《Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/宿舍/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -613,15 +669,16 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="宿舍">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
                         
-                        <span class="card-title">宿舍</span>
+                        <span class="card-title">Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+配置：ubuntu19.04显卡：GEFORCE 840M啊啊啊  好垃圾的笔记本。。。没想到还能支持GPU加速 同学们
                         
                     </div>
                     <div class="publish-info">
