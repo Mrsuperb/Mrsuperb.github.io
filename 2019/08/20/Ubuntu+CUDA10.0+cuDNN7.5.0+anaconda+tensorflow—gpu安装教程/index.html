@@ -4,10 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
-    <meta name="description" content="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+    <meta name="keywords" content="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="description" content="Ubuntu4+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
 配置：ubuntu19.04显卡：GEFORCE 840M  
-一  ubuntu 19.04安装网络上有很多文章，首先">
+一   ubuntu 19.04安装网络上有很多文章，首先博主是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | B先生的博客</title>
+    <title>Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | B先生的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +262,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+                        Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
                     </div>
                 </div>
             </div>
@@ -406,17 +406,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</p>
+                <p>Ubuntu4+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</p>
 <p>配置：ubuntu19.04<br>显卡：GEFORCE 840M  </p>
-<h2 id="一-ubuntu-19-04安装"><a href="#一-ubuntu-19-04安装" class="headerlink" title="一  ubuntu 19.04安装"></a>一  ubuntu 19.04安装</h2><p>网络上有很多文章，首先博主是根据B站UP主上的视频一步一步走下来的，有一个视频是讲双系统的，楼主垃圾笔记本一台装了ubuntu和win10双系统，有需要的同学可以上B站搜一下ubuntu安装这里就不放链接了。</p>
-<h2 id="二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"><a href="#二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！" class="headerlink" title="二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"></a>二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！</h2><p>登录网站   <a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-gpus</a><br>首先看看自己的显卡支不支持tensorflow—GPU</p>
+<h2 id="一-ubuntu-19-04安装"><a href="#一-ubuntu-19-04安装" class="headerlink" title="一   ubuntu 19.04安装"></a>一   ubuntu 19.04安装</h2><p>网络上有很多文章，首先博主是根据B站UP主上的视频一步一步走下来的，有一个视频是讲双系统的，楼主垃圾笔记本一台装了ubuntu和win10双系统，有需要的同学可以上B站搜一下ubuntu安装这里就不放链接了。</p>
+<h2 id="二-CUDA和cuDNN版本搞清楚！"><a href="#二-CUDA和cuDNN版本搞清楚！" class="headerlink" title="二   CUDA和cuDNN版本搞清楚！"></a>二   CUDA和cuDNN版本搞清楚！</h2><p>登录网站   <a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-gpus</a><br>首先看看自己的显卡支不支持tensorflow—GPU</p>
 <p>(<a href="https://img-blog.csdnimg.cn/2019050413481569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/2019050413481569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70</a>)<br>博主的老爷车GEFORCE 840M 竟然在里面！难以置信</p>
 <h2 id="三-安装显卡驱动"><a href="#三-安装显卡驱动" class="headerlink" title="三  安装显卡驱动"></a>三  安装显卡驱动</h2><p>楼主小白一枚 实在不明白又是禁用源驱动 又是一堆的神奇操作 选用了所有博主最不推荐的</p>
 <pre><code class="js">
-     sudo ubuntu-drivers autoinstall 
+sudo ubuntu-drivers autoinstall 
 </code></pre>
 <p>  博主选了一堆yes 由于之前安装过了 这里就不放截图了。安装完后印象里会安装好几个显卡驱动，通过ubuntu里面的软件与更新<img src="https://img-blog.csdnimg.cn/20190504135458560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>里面的附加驱动使用了418这个版本。安装完显卡驱动后重新启动下电脑，在终端运行</p>
-<p>nvidia-smi</p>
+<pre><code class="js">
+nvidia-smi
+</code></pre>
 <p>(<a href="https://img-blog.csdnimg.cn/20190504135844182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20190504135844182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70</a>)<br>说明显卡驱动安装成功，万里长城第一步啊。接下来就是安装CUDA和cuDNN</p>
 <h2 id="四-安装CUDA"><a href="#四-安装CUDA" class="headerlink" title="四 安装CUDA"></a>四 安装CUDA</h2><p>(<a href="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" target="_blank" rel="noopener">https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70</a>)</p>
 <p>这个是显卡驱动对应的CUDA版本我们安装的显卡驱动版本是418.56&gt;418.39 所以博主选用的CUDA是10.0版本。<br>然后同学们去<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
@@ -620,7 +622,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程》
+                    《Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程》
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程/" property="cc:attributionName"
                rel="cc:attributionURL">
@@ -671,17 +673,17 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
                         
-                        <span class="card-title">Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
+                        <span class="card-title">Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+                            Ubuntu4+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
 配置：ubuntu19.04显卡：GEFORCE 840M  
-一  ubuntu 19.04安装网络上有很多文章，首先
+一   ubuntu 19.04安装网络上有很多文章，首先博主是
                         
                     </div>
                     <div class="publish-info">
@@ -711,17 +713,17 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
                         
-                        <span class="card-title">Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
+                        <span class="card-title">Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu19.04+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+                            Ubuntu4+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
 配置：ubuntu19.04显卡：GEFORCE 840M  
-一  ubuntu 19.04安装网络上有很多文章，首先
+一   ubuntu 19.04安装网络上有很多文章，首先博主是
                         
                     </div>
                     <div class="publish-info">
