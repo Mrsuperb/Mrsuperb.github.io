@@ -4,10 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
-    <meta name="description" content="@TOC
-工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一">
+    <meta name="keywords" content="Ubuntu16.04LST+tensorflow—gpu安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="description" content="一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
+二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>B先生的博客</title>
+    <title>Ubuntu16.04LST+tensorflow—gpu安装教程 | 秋歌的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -43,7 +42,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">B先生的博客</span>
+                    <span class="logo-span">秋歌的博客</span>
                 </a>
             </div>
             
@@ -118,7 +117,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">B先生的博客</div>
+        <div class="logo-name">秋歌的博客</div>
         <div class="logo-desc">
             
             西安电子科技大学 | 电路与系统 | 人工智能
@@ -262,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        Ubuntu16.04LST+tensorflow—gpu安装教程
                     </div>
                 </div>
             </div>
@@ -390,7 +389,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-21
+                    2019-08-20
                 </div>
 
                 
@@ -406,9 +405,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>@<a href="Ubuntu16.04LST+tensorflow-GPU标准工作站安装">TOC</a></p>
-<h1 id="工作站环境说明"><a href="#工作站环境说明" class="headerlink" title="工作站环境说明"></a>工作站环境说明</h1><p>系统：ubuntu16.04LST<br>显卡：TITAN XP<br>ps：<strong>工作站内核最好不要更新，工作站稳定第一</strong></p>
-<h1 id="显卡驱动安装"><a href="#显卡驱动安装" class="headerlink" title="显卡驱动安装"></a>显卡驱动安装</h1><p> 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看，我在笔记本上安装利用ppa的形式安装的，感觉更简便一点。下面附上第一篇博客的链接<br> <a href="https://blog.csdn.net/weixin_43149427/article/details/89813192" target="_blank" rel="noopener">第一篇博客传送门</a><br>这篇讲的是工作站的安装方式</p>
+                <h1 id="一-工作站环境说明"><a href="#一-工作站环境说明" class="headerlink" title="一 工作站环境说明"></a>一 工作站环境说明</h1><p>系统：ubuntu16.04LST<br>显卡：TITAN XP<br>ps：<strong>工作站内核最好不要更新，工作站稳定第一</strong></p>
+<h1 id="二-显卡驱动安装"><a href="#二-显卡驱动安装" class="headerlink" title="二 显卡驱动安装"></a>二 显卡驱动安装</h1><p> 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看，我在笔记本上安装利用ppa的形式安装的，感觉更简便一点。下面附上第一篇博客的链接<br> <a href="https://blog.csdn.net/weixin_43149427/article/details/89813192" target="_blank" rel="noopener">第一篇博客传送门</a><br>这篇讲的是工作站的安装方式</p>
 <h2 id="1-禁用nouveau"><a href="#1-禁用nouveau" class="headerlink" title="1.禁用nouveau"></a>1.禁用nouveau</h2><pre><code class="javascript"> ctrl+alt+T  //打开终端
 sudo gedit /etc/modprobe.d/blacklist.conf  //进入系统启动黑名单</code></pre>
 <p>在最后一行加入</p>
@@ -420,14 +418,14 @@ sudo gedit /etc/modprobe.d/blacklist.conf  //进入系统启动黑名单</code><
 <h2 id="2-安装驱动"><a href="#2-安装驱动" class="headerlink" title="2.安装驱动"></a>2.安装驱动</h2><p>博主选用的是NVIDIA-Linux-x86_64-430.09.run  关于显卡驱动的下载以及版本说明还是上一条传送门<br>找到你下载的显卡驱动的位置，进入终端首先更改驱动的运行权限，变为可执行文件</p>
 <pre><code class="javascript">shuo chmod 777 NVIDIA-Linux-x86_64-430.09.run</code></pre>
 <p>777当然是代表辣个男人啦。不！当然是代表三中用户的 可执行做可读可写了！-rwxrwxrwx<br>然后按下ctrl+alt+F1 进入tty1 </p>
-<pre><code class="javascript">输入你的用户名
-输入你的密码</code></pre>
+<pre><code class="javascript">“输入你的用户名”
+“输入用户名对应密码”</code></pre>
 <p>关停图形界面</p>
 <pre><code class="javascript">sudo service lightdm stop</code></pre>
 <p>找到你显卡驱动的位置，输入</p>
 <pre><code class="javascript">sudo ./NVIDIA-Linux-x86_64-430.09.run -–no-opengl-files -–no-nouveau-check ––no-x-check</code></pre>
-<p>–no-opengl-files 只安装驱动文件，不安装OpenGL文件。这个参数最重要<br>–no-nouveau-check 安装驱动时不检查nouveau<br>–no-x-check 安装驱动时不检查X服务<br>这三个博主是参考网上的解释。我安装的时候都加上了。因人而异，我们实验室另一台图站就不行 就只用了第一个才能装上<br>然后输入你的密码 稍等片刻即可<br>随后进入类似图形界面的驱动安装界面<br>两次左边，选择继续安装。出现安装进度条后 两次选择默认即可。安装完成后 在终端输入nvidia-smi<br>我们就可以看到类似下图的界面<br><img src="https://img-blog.csdnimg.cn/20190526101049248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这张图片是我上个博客的，由于之前安装的版本号是418.56.这里显示的Driver Version是418.56<br>再次重新启动电脑如果你的电脑分辨率恢复正常就说明我们的驱动显卡安装完成，在这当中有些小伙伴可能会出现循环登录的情况。这一点听大哥说法是–no-opengl-files  –no-nouveau-check  –no-x-check ，这三个参数的原因可能你的只需要加入一个–no-opengl-files ，这一点博主也不是很了解。</p>
-<h1 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h1><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>去网站下载驱动<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
+<p>–no-opengl-files 只安装驱动文件，不安装OpenGL文件。这个参数最重要<br>–no-nouveau-check 安装驱动时不检查nouveau<br>–no-x-check 安装驱动时不检查X服务<br>这三个博主是参考网上的解释。我安装的时候都加上了。因人而异，我们实验室另一台图站就不行 就只用了第一个才能装上<br>然后输入你的密码 稍等片刻即可<br>随后进入类似图形界面的驱动安装界面<br>两次左边，选择继续安装。出现安装进度条后 两次选择默认即可。安装完成后 在终端输入nvidia-smi<br>我们就可以看到类似下图的界面<br><img src="https://img-blog.csdnimg.cn/20190526101049248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="nvidia_smi效果"><br>这张图片是我上个博客的，由于之前安装的版本号是418.56.这里显示的Driver Version是418.56<br>再次重新启动电脑如果你的电脑分辨率恢复正常就说明我们的驱动显卡安装完成，在这当中有些小伙伴可能会出现循环登录的情况。这一点听大哥说法是–no-opengl-files  –no-nouveau-check  –no-x-check ，这三个参数的原因可能你的只需要加入一个–no-opengl-files ，这一点博主也不是很了解。</p>
+<h1 id="三-安装CUDA"><a href="#三-安装CUDA" class="headerlink" title="三 安装CUDA"></a>三 安装CUDA</h1><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA与显卡驱动版本对应关系图"><br>去网站下载驱动<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
 <pre><code class="javascript">sudo chmod +x cuda_10.0.130_410.48_linux.run
 sudo ./cuda_10.0.130_410.48_linux.run -overrid</code></pre>
 <p>注意上面的数字根据自己下载的版本号更改 </p>
@@ -450,8 +448,8 @@ Cuda compilation tools, release 10.0, V10.0.130</code></pre>
 <pre><code class="javascript">cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
 sudo make
 ./deviceQuery</code></pre>
-<p>得到以下结果，及说名CUDA安装成功<br><img src="https://img-blog.csdnimg.cn/20190521211742747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p>打开网站<br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
+<p>得到以下结果，及说名CUDA安装成功<br><img src="https://img-blog.csdnimg.cn/20190521211742747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA测试截图"></p>
+<h1 id="四-安装cuDNN"><a href="#四-安装cuDNN" class="headerlink" title="四 安装cuDNN"></a>四 安装cuDNN</h1><p>打开网站<br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
 <p>下载自己需要的cuDNN</p>
 <p><img src="https://img-blog.csdnimg.cn/20190504145205682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我下载的版本为 10.0    下的   cuDNN library for linux<br>下载完成后输入以下命令<br>首先进入你下载文件的文件夹<br>然后解压文件运行以下代码，注意 解压的文件是你下载的文件。。我这里只是提供个例子，当时下载的到底是什么名字我也忘了，所以下面代码的第一行是解压你下载的安装包.要根据你自己的cudnn版本号更改的</p>
 <pre><code class="javascript">tar -xzvf cudnn-10.0-linux-x64-v7.5.0.56.tgz
@@ -459,15 +457,12 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</code></pre>
 <p>到这里cuDNN也已经配置完成</p>
-<h2 id="安装anaconda-以及tensorflow-gpu"><a href="#安装anaconda-以及tensorflow-gpu" class="headerlink" title="安装anaconda 以及tensorflow-gpu"></a>安装anaconda 以及tensorflow-gpu</h2><p>1.安装anaconda</p>
-<pre><code class="javascript">bash Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
-<p>2.在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow</p>
-<pre><code class="javascript">conda create -n tensorflow pip python=3.6</code></pre>
-<p>3.激活tensorflow(之前安装的虚拟环境)</p>
-<pre><code class="javascript">source activate tensorflow</code></pre>
-<p>4.安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)<br>注意不同版本的tensorflow-gpu 对应的CUDA也是不同的<br><a href="https://www.tensorflow.org/install/source" target="_blank" rel="noopener">https://www.tensorflow.org/install/source</a>  从这个网站查找对应你CUDA版本的gpu，我的电脑不能翻墙只能放一张老图<br><img src="https://img-blog.csdnimg.cn/20190504151111420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>从以上对应版本号上安装对应版本的tensorflow-gpu</p>
+<h1 id="五-安装anaconda-以及tensorflow-gpu"><a href="#五-安装anaconda-以及tensorflow-gpu" class="headerlink" title="五 安装anaconda 以及tensorflow-gpu"></a>五 安装anaconda 以及tensorflow-gpu</h1><h2 id="1-安装anaconda"><a href="#1-安装anaconda" class="headerlink" title="1.安装anaconda"></a>1.安装anaconda</h2><pre><code class="javascript">bash Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
+<h2 id="2-在anaconda当中安装-tensorflow虚拟环境这里将其命名为tensorflow"><a href="#2-在anaconda当中安装-tensorflow虚拟环境这里将其命名为tensorflow" class="headerlink" title="2.在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow"></a>2.在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow</h2><pre><code class="javascript">conda create -n tensorflow pip python=3.6</code></pre>
+<h2 id="3-激活tensorflow-之前安装的虚拟环境"><a href="#3-激活tensorflow-之前安装的虚拟环境" class="headerlink" title="3.激活tensorflow(之前安装的虚拟环境)"></a>3.激活tensorflow(之前安装的虚拟环境)</h2><pre><code class="javascript">source activate tensorflow</code></pre>
+<h2 id="4-安装tensorflow-gpu在tensorflow当中-之前安装的虚拟环境"><a href="#4-安装tensorflow-gpu在tensorflow当中-之前安装的虚拟环境" class="headerlink" title="4.安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)"></a>4.安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)</h2><p>注意不同版本的tensorflow-gpu 对应的CUDA也是不同的<br><a href="https://www.tensorflow.org/install/source" target="_blank" rel="noopener">https://www.tensorflow.org/install/source</a>  从这个网站查找对应你CUDA版本的gpu，我的电脑不能翻墙只能放一张老图<br><img src="https://img-blog.csdnimg.cn/20190504151111420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="ternsorflow-gpu 与CUDA 对应关系"><br>从以上对应版本号上安装对应版本的tensorflow-gpu</p>
 <pre><code class="javascript">pip install tensorflow-gpu == 1.13.1</code></pre>
-<p> 5.验证<br><img src="https://img-blog.csdnimg.cn/20190504151306674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="5-验证"><a href="#5-验证" class="headerlink" title="5.验证"></a>5.验证</h2><p><img src="https://img-blog.csdnimg.cn/20190504151306674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证"></p>
 
             </div>
             <hr/>
@@ -626,11 +621,11 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《》
+                    《Ubuntu16.04LST+tensorflow—gpu安装教程》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/21/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/" property="cc:attributionName"
                rel="cc:attributionURL">
-                秋硕
+                秋歌
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
                 知识共享署名 4.0 国际许可协议
@@ -668,50 +663,9 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2019/08/21/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            @TOC
-工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            秋硕
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2019/08/20/Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程/">
                     <div class="card-image">
@@ -731,17 +685,56 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            秋歌
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/20/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Ubuntu16.04LST+tensorflow—gpu安装教程">
+                        
+                        <span class="card-title">Ubuntu16.04LST+tensorflow—gpu安装教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
+二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            秋硕
+                            秋歌
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>

@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | B先生的博客</title>
+    <title>Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | 秋歌的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -43,7 +43,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">B先生的博客</span>
+                    <span class="logo-span">秋歌的博客</span>
                 </a>
             </div>
             
@@ -118,7 +118,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">B先生的博客</div>
+        <div class="logo-name">秋歌的博客</div>
         <div class="logo-desc">
             
             西安电子科技大学 | 电路与系统 | 人工智能
@@ -413,7 +413,7 @@
 <p><img src="https://img-blog.csdnimg.cn/2019050413481569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="支持加速的显卡"><br>博主的老爷车GEFORCE 840M 竟然在里面！难以置信</p>
 <h2 id="三-安装显卡驱动"><a href="#三-安装显卡驱动" class="headerlink" title="三  安装显卡驱动"></a>三  安装显卡驱动</h2><p>楼主小白一枚 实在不明白又是禁用源驱动 又是一堆的神奇操作 选用了所有博主最不推荐的</p>
 <pre><code class="javascript">sudo ubuntu-drivers autoinstall </code></pre>
-<p>  博主选了一堆yes 由于之前安装过了 这里就不放截图了。安装完后印象里会安装好几个显卡驱动，通过ubuntu里面的软件与更新<img src="https://img-blog.csdnimg.cn/20190504135458560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>里面的附加驱动使用了418这个版本。安装完显卡驱动后重新启动下电脑，在终端运行</p>
+<p>  博主选了一堆yes 由于之前安装过了 这里就不放截图了。安装完后印象里会安装好几个显卡驱动，通过ubuntu里面的软件与更新<img src="https://img-blog.csdnimg.cn/20190504135458560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="ubuntu驱动安装列表"><br>里面的附加驱动使用了418这个版本。安装完显卡驱动后重新启动下电脑，在终端运行</p>
 <pre><code class="javascript">nvidia-smi</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20190504135844182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证显卡驱动是否安装成功"><br>说明显卡驱动安装成功，万里长城第一步啊。接下来就是安装CUDA和cuDNN</p>
 <h2 id="四-安装CUDA"><a href="#四-安装CUDA" class="headerlink" title="四 安装CUDA"></a>四 安装CUDA</h2><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA与显卡版本号关系"><br>这个是显卡驱动对应的CUDA版本我们安装的显卡驱动版本是418.56&gt;418.39 所以博主选用的CUDA是10.0版本。<br>然后同学们 去<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
@@ -620,7 +620,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                 </span> 由
             <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程/" property="cc:attributionName"
                rel="cc:attributionURL">
-                秋硕
+                秋歌
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
                 知识共享署名 4.0 国际许可协议
@@ -658,47 +658,9 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2019/08/21/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            @TOC
-工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            秋硕
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
                 <a href="/2019/08/20/Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程/">
@@ -725,12 +687,50 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            秋硕
+                            秋歌
                             
                         </span>
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/08/20/Ubuntu16.04LST+tensorflow-GPU标准工作站安装/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Ubuntu16.04LST+tensorflow—gpu安装教程">
+                        
+                        <span class="card-title">Ubuntu16.04LST+tensorflow—gpu安装教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
+二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            秋歌
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
