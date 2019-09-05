@@ -735,6 +735,28 @@ def read_data(path):
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '10a94aa5c235d341f167',
+        clientSecret: 'e688df218c7becb0eb15f250b438d1e2e9ddf1b3',
+        repo: 'mrsuperb.github.io',
+        owner: 'mrsuperb',
+        admin: "mrsuperb",
+        id: '2019/08/28/python将批量图片以txt文件存储，并读取/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
