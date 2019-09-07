@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="keywords" content="MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
     <meta name="baidu-site-verification" content>
     <meta name="google-site-verification" content>
-    <meta name="description" content="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
-配置：ubuntu19.04显卡：GEFORCE 840M  
-一  Ubuntu19.04安装网络上有很多文章，首先博主是根据B">
+    <meta name="description" content="Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition 是2017年CVPR一篇关于细粒度的文章文章传送门
+一 文章简">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程 | 秋歌的博客</title>
+    <title>MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition | 秋歌的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -273,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
+                        MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition
                     </div>
                 </div>
             </div>
@@ -390,12 +389,16 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/tensorflow-gpu/" target="_blank">
-                            <span class="chip bg-color">tensorflow-gpu</span>
+                        <a href="/tags/论文分享/" target="_blank">
+                            <span class="chip bg-color">论文分享</span>
                         </a>
                         
-                        <a href="/tags/ubuntu/" target="_blank">
-                            <span class="chip bg-color">ubuntu</span>
+                        <a href="/tags/深度学习/" target="_blank">
+                            <span class="chip bg-color">深度学习</span>
+                        </a>
+                        
+                        <a href="/tags/细粒度/" target="_blank">
+                            <span class="chip bg-color">细粒度</span>
                         </a>
                         
                     </div>
@@ -406,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                            环境搭建
+                        <a href="/categories/论文分享/" class="post-category" target="_blank">
+                            论文分享
                         </a>
                         
                     </div>
@@ -418,7 +421,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-20
+                    2019-09-05
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -432,7 +435,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -455,58 +458,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</p>
-<p>配置：ubuntu19.04<br>显卡：GEFORCE 840M  </p>
-<h1 id="一-Ubuntu19-04安装"><a href="#一-Ubuntu19-04安装" class="headerlink" title="一  Ubuntu19.04安装"></a>一  Ubuntu19.04安装</h1><p>网络上有很多文章，首先博主是根据B站UP主上的视频一步一步走下来的，有一个视频是讲双系统的，楼主垃圾笔记本一台装了ubuntu和win10双系统，有需要的同学可以上B站搜一下ubuntu安装这里就不放链接了。</p>
-<h2 id="二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"><a href="#二-一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！" class="headerlink" title="二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！"></a>二   一定要看好自己笔记本支持的下载的CUDA和cuDNN版本搞清楚！</h2><p>登录网站   <a href="https://developer.nvidia.com/cuda-gpus" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-gpus</a><br>首先看看自己的显卡支不支持tensorflow—GPU</p>
-<p><img src="https://img-blog.csdnimg.cn/2019050413481569.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="支持加速的显卡"><br>博主的老爷车GEFORCE 840M 竟然在里面！难以置信</p>
-<h2 id="三-安装显卡驱动"><a href="#三-安装显卡驱动" class="headerlink" title="三  安装显卡驱动"></a>三  安装显卡驱动</h2><p>楼主小白一枚 实在不明白又是禁用源驱动 又是一堆的神奇操作 选用了所有博主最不推荐的</p>
-<pre><code class="javascript">sudo ubuntu-drivers autoinstall </code></pre>
-<p>  博主选了一堆yes 由于之前安装过了 这里就不放截图了。安装完后印象里会安装好几个显卡驱动，通过ubuntu里面的软件与更新<img src="https://img-blog.csdnimg.cn/20190504135458560.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="ubuntu驱动安装列表"><br>里面的附加驱动使用了418这个版本。安装完显卡驱动后重新启动下电脑，在终端运行</p>
-<pre><code class="javascript">nvidia-smi</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20190504135844182.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证显卡驱动是否安装成功"><br>说明显卡驱动安装成功，万里长城第一步啊。接下来就是安装CUDA和cuDNN</p>
-<h2 id="四-安装CUDA"><a href="#四-安装CUDA" class="headerlink" title="四 安装CUDA"></a>四 安装CUDA</h2><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA与显卡版本号关系"><br>这个是显卡驱动对应的CUDA版本我们安装的显卡驱动版本是418.56&gt;418.39 所以博主选用的CUDA是10.0版本。<br>然后同学们 去<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
-<pre><code class="javascript">sudo chmod +x cuda_10.0.130_410.48_linux.run
-sudo ./cuda_10.0.130_410.48_linux.run -overrid</code></pre>
-<p>注意上面的数字根据自己下载的版本号更改<br>在安装CUDA的时候 注意不要安装CUDA所带的驱动 由于我们之前安装了显卡驱动了 所以不需要重复安装</p>
-<p>然后就是配置环境 输入终端命令</p>
-<pre><code class="javascript">sudo gedit ~/.bashrc</code></pre>
-<p>进入编辑模式将下面两条命令加入文档最后面：下面的序列号也需要根据自己的CUDA版本号更改</p>
-<pre><code class="javascript">export PATH=/usr/local/cuda-10.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH</code></pre>
-<p>加入后在终端输入，从而使得环境生效</p>
-<pre><code class="javascript">source ~/.bashrc</code></pre>
-<p>在终端输入，即可得到我们的CUDA信息 10.0.130</p>
-<pre><code class="javascript">nvcc -V</code></pre>
-<p>现实如下 可见我们安装的CUDA版本为10.0.130</p>
-<pre><code class="javascript">maqiushuo@maqiushuo-Aspire-E5-572G:~$ nvcc -V
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2018 NVIDIA Corporation
-Built on Sat_Aug_25_21:08:01_CDT_2018
-Cuda compilation tools, release 10.0, V10.0.130</code></pre>
-<p>验证<br>打开终端输入</p>
-<pre><code class="javascript">cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
-sudo make
-./deviceQuery</code></pre>
-<p>得到以下结果，及说名CUDA安装成功<br><img src="https://img-blog.csdnimg.cn/20190521211742747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证CUDA安装是否成功"></p>
-<h2 id="五-安装cuDNN"><a href="#五-安装cuDNN" class="headerlink" title="五 安装cuDNN"></a>五 安装cuDNN</h2><p>打开网站<br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
-<p>下载自己需要的cuDNN</p>
-<p><img src="https://img-blog.csdnimg.cn/20190504145205682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="cuDNN版本号"><br>我下载的版本为 10.0    下的   cuDNN library for linux<br>下载完成后输入以下命令<br>首先进入你下载文件的文件夹<br>然后解压文件运行以下代码，注意 解压的文件是你下载的文件。。我这里只是提供个例子，当时下载的到底是什么名字我也忘了，所以下面代码的第一行是解压你下载的安装包.要根据你自己的cudnn版本号更改的</p>
-<pre><code class="javascript">tar -xzvf cudnn-10.0-linux-x64-v7.5.0.56.tgz
-sudo cp cuda/include/cudnn.h /usr/local/cuda/include
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
-sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</code></pre>
-<p>到这里cuDNN也已经配置完成</p>
-<h2 id="安装anaconda-以及tensorflow-gpu"><a href="#安装anaconda-以及tensorflow-gpu" class="headerlink" title="安装anaconda 以及tensorflow-gpu"></a>安装anaconda 以及tensorflow-gpu</h2><p>1.安装anaconda</p>
-<pre><code class="javascript">bash Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
-<p>2.在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow</p>
-<pre><code class="javascript">conda create -n tensorflow pip python=3.6</code></pre>
-<p>3.激活tensorflow(之前安装的虚拟环境)</p>
-<pre><code class="javascript">source activate tensorflow</code></pre>
-<p>4.安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)<br>注意不同版本的tensorflow-gpu 对应的CUDA也是不同的<br><a href="https://www.tensorflow.org/install/source" target="_blank" rel="noopener">https://www.tensorflow.org/install/source</a>  从这个网站查找对应你CUDA版本的gpu，我的电脑不能翻墙只能放一张老图<br><img src="https://img-blog.csdnimg.cn/20190504151111420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA与tensorflow-gpu对应关系"><br>从以上对应版本号上安装对应版本的tensorflow-gpu</p>
-<pre><code class="javascript">pip install tensorflow-gpu == “你的版本”</code></pre>
-<p> 5.验证<br><img src="https://img-blog.csdnimg.cn/20190504151306674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证是否成功"><br> 打开终端，激活tensorflow，输入python，输入import tensorflow as tf<br> 不报错！！！！！！就安装成功了！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！<br> 博主安装了两天，第二天凌晨4点安装成功。。哎。现在想想真的是浪费生命啊<br> 之前博主安装的是CUDA10.1，死活不兼容，后来博主百度查到，应该是anaconda公司没有更新，所以导致对CUDA10.1的不兼容。</p>
-<p> 参考文档如下</p>
+                <p>Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition 是2017年CVPR一篇关于细粒度的文章<br><a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Zheng_Learning_Multi-Attention_Convolutional_ICCV_2017_paper.pdf" target="_blank" rel="noopener">文章传送门</a></p>
+<h2 id="一-文章简介"><a href="#一-文章简介" class="headerlink" title="一 文章简介"></a>一 文章简介</h2><p>文章提出了一种采用弱监督学习的多注意力的卷积神经网络，主要要解决以下两个问题：<br>                 1.当前的细粒度分类方法主要依赖于具有区分度的局部信息或者基于局部的精准信息，少有将二者联系起来的模型。<br>                 2.基于局部信息的模型，通常需要手工标注注意力区域，这需要耗费大量人力。</p>
+<h2 id="二-文章的亮点"><a href="#二-文章的亮点" class="headerlink" title="二 文章的亮点"></a>二 文章的亮点</h2><p>1.由于卷积层不同通道对图像的感知敏感性是不同的，文章利用这一点，在通道特征的利用上下了一定功夫，得到不同通道级别的注意力区域<br>2.文章针对生成的注意力区域设置了channel group loss，目的是为了让生成的不同通道级别注意力区域更加有信息性以及代表性</p>
+<h2 id="三-模型"><a href="#三-模型" class="headerlink" title="三 模型"></a>三 模型</h2><p><img src="/images/MACNN/base.png" alt="3.1"></p>
+<p>如图3.1所示，文章认为不同的鸟类，在相同部分，如翅膀，嘴尖，爪子上有的微妙的视觉差异，文章主要利用这一点，分别选取鸟类中具有判别性的区域，输入其设计的多注意力网络，实现对鸟类的判别</p>
+<p><img src="/images/MACNN/basemodel.png" alt="3.2"></p>
+<p>网络的整体结构如图3.2所示，输入一张图片到卷积神经网络，由于卷积层的不同通道对事物的感知能力是不同的，有的卷积层对翅膀可能更敏感，有的可能对嘴尖更敏感（以鸟为例），所以有图3.2（c）中对同一卷积层的通道展开，有不同灰色感知区域的差别，文章通过聚类算法对相同感知区域的卷积通道进行聚类，假设聚类中心为4（图3.2e中的四幅图），对处于同一聚类结果的不同通道卷积层进行通道级求和，就得到了图3.2e的部分，再对其进行归一化处理，sigmoid函数，产生四个不同区域的空间注意力mask，mask主要是用于定位局部特征区域，mask与卷积层的特征进行点乘，便得到了不同区域细化的卷积特征，分别进行softmax分类。</p>
+<h2 id="四-方法流程"><a href="#四-方法流程" class="headerlink" title="四 方法流程"></a>四 方法流程</h2><h3 id="4-1-通道级特征选取"><a href="#4-1-通道级特征选取" class="headerlink" title="4.1 通道级特征选取"></a>4.1 通道级特征选取</h3><p>个人认为是文章最具有创新性的部分</p>
+<p>channel grouping 预训练</p>
+<p>直接用初始化参数训练，容易造成这部分陷入局部最优解，这就需要对其进行提前的预训练处理</p>
+<p>预训练过程中，feature map 每一个channel都会产生信息突出点，也就是被激活的区域，我们可以将激活值最高的区域的（）坐标作为这个channel代表特征，用于参与聚类。<br><img src="/images/MACNN/first.png" alt="4.1"><br>将图4.1的channel 代表特征进行聚类，聚成N簇，在分别对其每一簇进行编码<br><img src="/images/MACNN/second.png" alt="4.2"><br>若向量的channel 属于当前簇，则将其设为1，否者设为0，也就是说，假设只有A,B两簇，A簇为【1,0,0,0,1】，那么B簇的编码必为【0,1,1,1,0],即编码后的N簇是互斥的。但是这样的处理方式存在一个问题，那就是无法在同一网络进行端对端的训练。<br>所以文章采用了用全连接层替代强行0.1编码的方式，改用N组全连接层，每个全连接层收网络的特征，生成一个权重向量di<br><img src="/images/MACNN/third.png" alt="4.3"><br>为了让获得的di更加准确，文章需要对全连接层的参数进行预训练，即图4.3的值尽可能的趋近于图4.2的值。经过这样的处理后，我们得到了N个部分的卷积特征掩码，通过图4.4，即feature map 与mask点乘后，通道求和。在经过sigmoid进行归一化处理得到 probabilities map。<br><img src="/images/MACNN/forth.png" alt="4.4"><br>综合起来得到图4.5，channe group 特征的获取方式</p>
+<p><img src="/images/MACNN/fifth.png" alt="4.5"><br>其中，W为全脸层参数，X为输入卷积特征，M为得到的channel attention mask</p>
+<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p><img src="/images/MACNN/sixth.png" alt="4.6"><br>整体损失函数如图4.6所示共有以下两部分构成</p>
+<p>####分类损失<br>常见的交叉熵分类损失，N个part损失共同求和优化</p>
+<p>####channel group part 损失</p>
+<p>为了使 channel group part 同一part 距离更近，不同part距离更远，文章提出了DIS 和 DIV 两种损失函数如图4.8,4.9所示</p>
+<p><img src="/images/MACNN/eighth.png" alt="4.8"><br><img src="/images/MACNN/ninth.png" alt="4.9"></p>
+<p> 这部分整体损失函数为图4.10</p>
+<p><img src="/images/MACNN/seventh.png" alt="4.10"></p>
+<h3 id="训练方式"><a href="#训练方式" class="headerlink" title="训练方式"></a>训练方式</h3><p>文章采用了交替训练的方式，即分类部分与channel group 部分相互强化训练的方式，固定一部分，训练另一部分，直到二者损失均平稳，认为训练完成</p>
+<h2 id="五-总结"><a href="#五-总结" class="headerlink" title="五 总结"></a>五 总结</h2><p>文章在channel group 那部分设置十分巧妙，通过N组全连接层去替代1.0编码 以及在文章区域信息的把握上值得学习与借鉴。</p>
 
             </div>
             <hr />
@@ -665,9 +637,9 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程》
+                    《MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/ubuntu显卡驱动+tensorflow—gpu安装教程/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/05/MACNN-Learning-Multi-Attention-Convolutional-Neural-Network-for-Fine-Grained-Image-Recognition/" property="cc:attributionName"
                rel="cc:attributionURL">
                 秋歌
             </a> 采用
@@ -708,7 +680,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
         repo: 'mrsuperb.github.io',
         owner: 'mrsuperb',
         admin: "mrsuperb",
-        id: '2019/08/20/ubuntu显卡驱动+tensorflow—gpu安装教程/',
+        id: '2019/09/05/MACNN-Learning-Multi-Attention-Convolutional-Neural-Network-for-Fine-Grained-Image-Recognition/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -733,32 +705,31 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/20/Ubuntu16-04LST-tensorflow-GPU标准工作站安装/">
+                <a href="/2019/09/06/Lookign-for-the-Devil-in-the-Details-Learning-Trilinear-Attention-Sampling-Network-for-Fine-grained-Image-Recongnition/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Lookign for the Devil in the Details:Learning Trilinear Attention Sampling Network for Fine-grained Image Recongnition">
                         
-                        <span class="card-title">Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程</span>
+                        <span class="card-title">Lookign for the Devil in the Details:Learning Trilinear Attention Sampling Network for Fine-grained Image Recongnition</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看
+                            Lookign-for-the-Devil-in-the-Details-Learning-Trilinear-Attention-Sampling-Network-for-Fine-grained-Image-Recongnition 是
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
+                            <a href="/categories/论文分享/" class="post-category" target="_blank">
+                                    论文分享
                                 </a>
                             
                             
@@ -768,12 +739,16 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tensorflow-gpu/" target="_blank">
-                        <span class="chip bg-color">tensorflow-gpu</span>
+                    <a href="/tags/论文分享/" target="_blank">
+                        <span class="chip bg-color">论文分享</span>
                     </a>
                     
-                    <a href="/tags/ubuntu/" target="_blank">
-                        <span class="chip bg-color">ubuntu</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/细粒度/" target="_blank">
+                        <span class="chip bg-color">细粒度</span>
                     </a>
                     
                 </div>
@@ -784,52 +759,49 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/20/ubuntu显卡驱动+tensorflow—gpu安装教程/">
+                <a href="/2019/08/28/python将批量图片以txt文件存储，并读取/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python将批量图片以txt文件存储，并读取">
                         
-                        <span class="card-title">Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
+                        <span class="card-title">python将批量图片以txt文件存储，并读取</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
-配置：ubuntu19.04显卡：GEFORCE 840M  
-一  Ubuntu19.04安装网络上有很多文章，首先博主是根据B
+                            将图片存储为txt的原因在将图片数据输入卷积神经网络时，如果通过np.load进行输入，常常会出现内存爆炸的问题，为节约内存，将图片按照txt文件读取，是一种非常好的读取方式，当然啊，如今ternsorflow出的API也相当不错。技多不压
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tensorflow-gpu/" target="_blank">
-                        <span class="chip bg-color">tensorflow-gpu</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/ubuntu/" target="_blank">
-                        <span class="chip bg-color">ubuntu</span>
+                    <a href="/tags/深度学习编程/" target="_blank">
+                        <span class="chip bg-color">深度学习编程</span>
                     </a>
                     
                 </div>
