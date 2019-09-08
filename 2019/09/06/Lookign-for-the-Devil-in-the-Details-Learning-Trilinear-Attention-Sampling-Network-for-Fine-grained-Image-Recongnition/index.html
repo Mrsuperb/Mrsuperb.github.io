@@ -434,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    553
+                    959
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
                 
@@ -463,7 +463,9 @@
 <p>模型的主体结构主要由三部分构成：<br>  1.trilinear attention:通过通道间的联系，构建通道级别的attention图<br>  2.channel level sampling:对不同的通道区域进行采样<br>  3.feature distiller：通过知识蒸馏以及参数共享，实现对局部特征的融合</p>
 <p>将图片输入卷积网络得到卷积特征输入TASN得到通道的注意图，上部分对整个注意力图做average pooling后与原图像经采样后共同输入待训练的卷积神经网络，下部分按照文中的channel level sampling对单个通道注意力图进行采样，采样出单张后与原图像经过采样后输入待训练的卷积神经网络，上下两部分的卷积网络参数共享，上半部分作为训练的结构框架，下半部分通过featuredistiller的方式对卷积神经网络的局部细节进行补充。</p>
 <h2 id="三-方法流程"><a href="#三-方法流程" class="headerlink" title="三 方法流程"></a>三 方法流程</h2><h3 id="3-1-trilinear-attention"><a href="#3-1-trilinear-attention" class="headerlink" title="3.1 trilinear attention"></a>3.1 trilinear attention</h3><p>trilinear attention的主要结构如图所示<br><img src="/images/Lookign/3.png" alt>)</p>
-<p>之前提到过，不同卷积层对特征的不同区域的敏感性是不同的，也就是说，不同卷积层我们可以认为是可以生成不同感知区域的attention 文章根据feature channel的空间关系对通道特征进行整合，将特征图转化为前向传播的注意力图，这种注意力图的生成方式与平常接触的CAM图还是有差别的，<br>CAM是根据分类loss反向传播得到的特征图，trilinear attention这种特征图生成方式更类似与前向生成的特征图。<br>文章提出的三线性特征为：<img src="/images/Lookign/(1).png" alt>)</p>
+<p>之前提到过，不同卷积层对特征的不同区域的敏感性是不同的，也就是说，不同卷积层我们可以认为是可以生成不同感知区域的attention 文章根据feature channel的空间关系对通道特征进行整合，将特征图转化为前向传播的注意力图，这种注意力图的生成方式与平常接触的CAM图还是有差别的，<br>CAM是根据分类loss反向传播得到的特征图，trilinear attention这种特征图生成方式更类似与前向生成的特征图。<br>文章提出的三线性特征为：<br><img src="/images/Lookign/4.png" alt><br>为了提高三线性注意力的有效性，文章提出了一种非线性形式的三线性注意力<br><img src="/images/Lookign/5.png" alt><br>其中N为softmax函数，第一个softmax目的是保持通道级信息在同一尺度上（0-1），第二个softmax在每个通道级特征上进行非线性，目的是更好的突出attention区域。<br>文章还提到，为了获取位置更加准确的feature map，文章通过改变卷积核移除了resnet网络的两个下采样图，以及增加扩张卷积从而增加卷积网路网络的感受野。</p>
+<h3 id="3-2-channel-level-sampling"><a href="#3-2-channel-level-sampling" class="headerlink" title="3.2 channel level sampling"></a>3.2 channel level sampling</h3><p>文章将原图像与三线注意力图作为输入，分别生成保留结构信息以及局部细节信息的feature，与直接输入原始图像相比，保留的结构去除了没有细粒度细节的区域，因此能够更好的表示辨识部分，细节信息的图像更着重与单个部分，可以保留更具有细粒度细节信息。<br><img src="/images/Lookign/6.png" alt><br>其中，I是输入原图像，M是3.1中生成的attention map，S表示非线性采样，A代表在通道尺度上的average pooling（代表结构信息），R表示从输入attention map随机选取通道的单个feature（局部细节信息）通过不断的训练，每一个channel 都有可能被选到。<br>这部分比较重要的部分是采样函数S的定义<br><img src="/images/Lookign/7.png" alt></p>
+<p>文章将注意力图是做概率权重函数，也就是说具有较大注意力值得区域，有更大的概率被采样到。</p>
 <h3 id="3-2-损失函数"><a href="#3-2-损失函数" class="headerlink" title="3.2 损失函数"></a>3.2 损失函数</h3>
             </div>
             <hr />
@@ -948,7 +950,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">5.3k</span>
+            <span class="white-color">5.7k</span>
             
 
             <br>
