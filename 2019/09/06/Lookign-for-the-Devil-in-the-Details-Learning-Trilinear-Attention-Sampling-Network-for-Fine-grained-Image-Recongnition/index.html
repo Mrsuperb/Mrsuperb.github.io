@@ -434,14 +434,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    594
+                    553
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
                 
@@ -462,16 +462,9 @@
 <h2 id="二-模型"><a href="#二-模型" class="headerlink" title="二 模型"></a>二 模型</h2><p><img src="/images/Lookign/2.png" alt>)</p>
 <p>模型的主体结构主要由三部分构成：<br>  1.trilinear attention:通过通道间的联系，构建通道级别的attention图<br>  2.channel level sampling:对不同的通道区域进行采样<br>  3.feature distiller：通过知识蒸馏以及参数共享，实现对局部特征的融合</p>
 <p>将图片输入卷积网络得到卷积特征输入TASN得到通道的注意图，上部分对整个注意力图做average pooling后与原图像经采样后共同输入待训练的卷积神经网络，下部分按照文中的channel level sampling对单个通道注意力图进行采样，采样出单张后与原图像经过采样后输入待训练的卷积神经网络，上下两部分的卷积网络参数共享，上半部分作为训练的结构框架，下半部分通过featuredistiller的方式对卷积神经网络的局部细节进行补充。</p>
-<h2 id="三-方法流程"><a href="#三-方法流程" class="headerlink" title="三 方法流程"></a>三 方法流程</h2><h3 id="3-1-trilinear-attention"><a href="#3-1-trilinear-attention" class="headerlink" title="3.1 trilinear attention"></a>3.1 trilinear attention</h3><h3 id="3-2-损失函数"><a href="#3-2-损失函数" class="headerlink" title="3.2 损失函数"></a>3.2 损失函数</h3><p><img src="/images/MACNN/sixth.png" alt="4.6"><br>整体损失函数如图4.6所示共有以下两部分构成</p>
-<p>####分类损失<br>常见的交叉熵分类损失，N个part损失共同求和优化</p>
-<p>####channel group part 损失</p>
-<p>为了使 channel group part 同一part 距离更近，不同part距离更远，文章提出了DIS 和 DIV 两种损失函数如图4.8,4.9所示</p>
-<p><img src="/images/MACNN/eighth.png" alt="4.8"><br><img src="/images/MACNN/ninth.png" alt="4.9"></p>
-<p> 这部分整体损失函数为图4.10</p>
-<p><img src="/images/MACNN/seventh.png" alt="4.10"></p>
-<h3 id="训练方式"><a href="#训练方式" class="headerlink" title="训练方式"></a>训练方式</h3><p>文章采用了交替训练的方式，即分类部分与channel group 部分相互强化训练的方式，固定一部分，训练另一部分，直到二者损失均平稳，认为训练完成</p>
-<h2 id="五-总结"><a href="#五-总结" class="headerlink" title="五 总结"></a>五 总结</h2><p>文章在channel group 那部分设置十分巧妙，通过N组全连接层去替代1.0编码 以及在文章区域信息的把握上值得学习与借鉴。</p>
-
+<h2 id="三-方法流程"><a href="#三-方法流程" class="headerlink" title="三 方法流程"></a>三 方法流程</h2><h3 id="3-1-trilinear-attention"><a href="#3-1-trilinear-attention" class="headerlink" title="3.1 trilinear attention"></a>3.1 trilinear attention</h3><p>trilinear attention的主要结构如图所示<br><img src="/images/Lookign/3.png" alt>)</p>
+<p>之前提到过，不同卷积层对特征的不同区域的敏感性是不同的，也就是说，不同卷积层我们可以认为是可以生成不同感知区域的attention 文章根据feature channel的空间关系对通道特征进行整合，将特征图转化为前向传播的注意力图，这种注意力图的生成方式与平常接触的CAM图还是有差别的，<br>CAM是根据分类loss反向传播得到的特征图，trilinear attention这种特征图生成方式更类似与前向生成的特征图。<br>文章提出的三线性特征为：<img src="/images/Lookign/(1).png" alt>)</p>
+<h3 id="3-2-损失函数"><a href="#3-2-损失函数" class="headerlink" title="3.2 损失函数"></a>3.2 损失函数</h3>
             </div>
             <hr />
 
@@ -965,13 +958,14 @@
             
             <br>
             
-            <span id="busuanzi_container_site_pv" style='display:none'>
+            <span id="">
                 <i class="fa fa-heart-o"></i>
                 本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
-            <span id="busuanzi_container_site_uv" style='display:none'>
+            <span id="">
+                <i class="fa fa-users"></i>
                 人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
             </span>
             
@@ -1014,8 +1008,8 @@
     $(document).ready(function () {
 
         var int = setInterval(fixCount, 50);
-        var pvcountOffset = 80000;
-        var uvcountOffset = 2000;
+        var pvcountOffset = 200;
+        var uvcountOffset = 10;
 
         function fixCount() {
             if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
@@ -1065,9 +1059,6 @@
     }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
 </script>
-
-
-
 
 <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
