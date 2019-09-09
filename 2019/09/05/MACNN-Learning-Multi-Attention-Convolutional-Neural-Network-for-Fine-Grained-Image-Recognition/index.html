@@ -471,9 +471,8 @@
 <p>预训练过程中，feature map 每一个channel都会产生信息突出点，也就是被激活的区域，我们可以将激活值最高的区域的（）坐标作为这个channel代表特征，用于参与聚类。<br><img src="/images/MACNN/first.png" alt="4.1"><br>将图4.1的channel 代表特征进行聚类，聚成N簇，在分别对其每一簇进行编码<br><img src="/images/MACNN/second.png" alt="4.2"><br>若向量的channel 属于当前簇，则将其设为1，否者设为0，也就是说，假设只有A,B两簇，A簇为【1,0,0,0,1】，那么B簇的编码必为【0,1,1,1,0],即编码后的N簇是互斥的。但是这样的处理方式存在一个问题，那就是无法在同一网络进行端对端的训练。<br>所以文章采用了用全连接层替代强行0.1编码的方式，改用N组全连接层，每个全连接层收网络的特征，生成一个权重向量di<br><img src="/images/MACNN/third.png" alt="4.3"><br>为了让获得的di更加准确，文章需要对全连接层的参数进行预训练，即图4.3的值尽可能的趋近于图4.2的值。经过这样的处理后，我们得到了N个部分的卷积特征掩码，通过图4.4，即feature map 与mask点乘后，通道求和。在经过sigmoid进行归一化处理得到 probabilities map。<br><img src="/images/MACNN/forth.png" alt="4.4"><br>综合起来得到图4.5，channe group 特征的获取方式</p>
 <p><img src="/images/MACNN/fifth.png" alt="4.5"><br>其中，W为全脸层参数，X为输入卷积特征，M为得到的channel attention mask</p>
 <h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p><img src="/images/MACNN/sixth.png" alt="4.6"><br>整体损失函数如图4.6所示共有以下两部分构成</p>
-<p>####分类损失<br>常见的交叉熵分类损失，N个part损失共同求和优化</p>
-<p>####channel group part 损失</p>
-<p>为了使 channel group part 同一part 距离更近，不同part距离更远，文章提出了DIS 和 DIV 两种损失函数如图4.8,4.9所示</p>
+<h4 id="分类损失"><a href="#分类损失" class="headerlink" title="分类损失"></a>分类损失</h4><p>常见的交叉熵分类损失，N个part损失共同求和优化</p>
+<h4 id="channel-group-part-损失"><a href="#channel-group-part-损失" class="headerlink" title="channel group part 损失"></a>channel group part 损失</h4><p>为了使 channel group part 同一part 距离更近，不同part距离更远，文章提出了DIS 和 DIV 两种损失函数如图4.8,4.9所示</p>
 <p><img src="/images/MACNN/eighth.png" alt="4.8"><br><img src="/images/MACNN/ninth.png" alt="4.9"></p>
 <p> 这部分整体损失函数为图4.10</p>
 <p><img src="/images/MACNN/seventh.png" alt="4.10"></p>
