@@ -43,6 +43,9 @@
     </script>
 </head>
 
+ <script type="text/javascript"> //只在桌面版网页启用特效 var windowWidth = $(window).width(); if (windowWidth > 768) { document.write('<script type="text/javascript" src="/js/wenzi.js"></script>'); }  
+
+
 <body>
 
 <header class="navbar-fixed">
@@ -738,6 +741,59 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2019/08/28/python将批量图片以txt文件存储，并读取/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="python将批量图片以txt文件存储，并读取">
+                        
+                        <span class="card-title">python将批量图片以txt文件存储，并读取</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            将图片存储为txt的原因在将图片数据输入卷积神经网络时，如果通过np.load进行输入，常常会出现内存爆炸的问题，为节约内存，将图片按照txt文件读取，是一种非常好的读取方式，当然啊，如今ternsorflow出的API也相当不错。技多不压
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/深度学习编程/" target="_blank">
+                        <span class="chip bg-color">深度学习编程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2019/08/20/ubuntu显卡驱动+tensorflow—gpu安装教程/">
                     <div class="card-image">
                         
@@ -756,60 +812,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/tensorflow-gpu/" target="_blank">
-                        <span class="chip bg-color">tensorflow-gpu</span>
-                    </a>
-                    
-                    <a href="/tags/ubuntu/" target="_blank">
-                        <span class="chip bg-color">ubuntu</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/2019/08/20/Ubuntu16-04LST-tensorflow-GPU标准工作站安装/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程">
-                        
-                        <span class="card-title">Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
                             </span>
@@ -825,7 +827,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -854,7 +855,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('120')) {
+        if (('' + selection).length < Number.parseInt('180')) {
             return;
         }
 
@@ -982,6 +983,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
 </main>
 
 
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
@@ -1146,3 +1148,30 @@ $(function () {
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
 </html>
+
+<script type="text/javascript"> 
+    var OriginTitile = document.title, 
+       st; 
+   document.addEventListener("visibilitychange", function () {
+      document.hidden ? (document.title = "页面崩溃了404", clearTimeout(st)) : (document.title = "又好了~🙈~🙈~", st = setTimeout(function () 
+      { document.title = OriginTitile
+       }, 3e3)) 
+   }) 
+</script>
+
+<!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
+ <!-- weather -->
+<script type="text/javascript">
+WIDGET = {FID: '3ZQNbLyzoB'}
+
+<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> --> 
+
+
+<script type="text/javascript"> 
+  //只在桌面版网页启用特效
+  var windowWidth = $(window).width(); 
+  if (windowWidth > 768) { 
+     document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>'); 
+  } 
+ </script>
+ 
