@@ -33,6 +33,16 @@ body {
     color: #34495e;
 }
 
+/* body {
+    background-image: "/medias/featureimages/6.jpg";
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    background-size: cover;
+    margin:0 auto;
+} */
+
+
 h1 {
     margin: 48px 0 22px -5px;
     font-size: 2.0rem;
