@@ -139,71 +139,64 @@
 
     
 
-    <ul class="menu-list mobile-menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                归档
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-address-book"></i>
-                
-                友情链接
-            </a>
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17 --> 
+<ul class="menu-list mobile-menu-list"> 
+     
+        <li class="m-nav-item"> 
+             
+                <a href="/" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-home"></i> 
+                         
+                        首页 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/tags" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-tags"></i> 
+                         
+                        标签 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/categories" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-bookmark"></i> 
+                         
+                        分类 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/archives" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-archive"></i> 
+                         
+                        归档 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/about" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-user-circle-o"></i> 
+                         
+                        关于 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/friends" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-address-book"></i> 
+                         
+                        友情链接 
+                    </a> 
+                 </li>   <li><div class="divider"></div></li> <li> <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank"> <i class="fa fa-github-square fa-fw"></i>Fork Me </a> </li>  </ul>
+
 </div>
 
         </div>
@@ -481,7 +474,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         },
         xAxis: {
             type: 'category',
-            data: ["2018-09","2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09"]
+            data: ["2018-10","2018-11","2018-12","2019-01","2019-02","2019-03","2019-04","2019-05","2019-06","2019-07","2019-08","2019-09","2019-10"]
         },
         yAxis: {
             type: 'value',
@@ -491,7 +484,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,3,3],
+                data: [0,0,0,0,0,0,0,0,0,0,3,3,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -533,7 +526,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"环境搭建","value":2},{"name":"论文分享","value":2},{"name":"python","value":1}],
+                data: [{"name":"论文分享","value":2},{"name":"环境搭建","value":2},{"name":"python","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -557,7 +550,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["tensorflow-gpu","ubuntu","论文分享","深度学习","细粒度","python","深度学习编程"]
+                data: ["论文分享","深度学习","细粒度","tensorflow-gpu","ubuntu","python","深度学习编程"]
             }
         ],
         yAxis: [
@@ -687,18 +680,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/tensorflow-gpu/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">tensorflow-gpu</span>
-            </a>
-            
-            
-            
-            <a href="/tags/ubuntu/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">ubuntu</span>
-            </a>
-            
-            
-            
             <a href="/tags/论文分享/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">论文分享</span>
             </a>
@@ -713,6 +694,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/细粒度/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">细粒度</span>
+            </a>
+            
+            
+            
+            <a href="/tags/tensorflow-gpu/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">tensorflow-gpu</span>
+            </a>
+            
+            
+            
+            <a href="/tags/ubuntu/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">ubuntu</span>
             </a>
             
             
@@ -951,7 +944,7 @@ $(function () {
     var OriginTitile = document.title, 
        st; 
    document.addEventListener("visibilitychange", function () {
-      document.hidden ? (document.title = "页面崩溃了404", clearTimeout(st)) : (document.title = "又好了~🙈~🙈~", st = setTimeout(function () 
+      document.hidden ? (document.title = "页面崩溃了404~🙈", clearTimeout(st)) : (document.title = "逗你玩的~🙈", st = setTimeout(function () 
       { document.title = OriginTitile
        }, 3e3)) 
    }) 

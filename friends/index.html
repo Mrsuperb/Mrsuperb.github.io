@@ -139,71 +139,64 @@
 
     
 
-    <ul class="menu-list mobile-menu-list">
-        
-        <li>
-            <a href="/" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-home"></i>
-                
-                首页
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tags" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-tags"></i>
-                
-                标签
-            </a>
-        </li>
-        
-        <li>
-            <a href="/categories" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-bookmark"></i>
-                
-                分类
-            </a>
-        </li>
-        
-        <li>
-            <a href="/archives" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-archive"></i>
-                
-                归档
-            </a>
-        </li>
-        
-        <li>
-            <a href="/about" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-user-circle-o"></i>
-                
-                关于
-            </a>
-        </li>
-        
-        <li>
-            <a href="/friends" class="waves-effect waves-light">
-                
-                <i class="fa fa-fw fa-address-book"></i>
-                
-                友情链接
-            </a>
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
+<!-- 支持二级菜单特性 洪卫 shw2018 modify 2019.09.17 --> 
+<ul class="menu-list mobile-menu-list"> 
+     
+        <li class="m-nav-item"> 
+             
+                <a href="/" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-home"></i> 
+                         
+                        首页 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/tags" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-tags"></i> 
+                         
+                        标签 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/categories" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-bookmark"></i> 
+                         
+                        分类 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/archives" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-archive"></i> 
+                         
+                        归档 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/about" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-user-circle-o"></i> 
+                         
+                        关于 
+                    </a> 
+                 </li>  
+        <li class="m-nav-item"> 
+             
+                <a href="/friends" class="waves-effect waves-light"> 
+                     
+                        <i class="fa fa-fw fa-address-book"></i> 
+                         
+                        友情链接 
+                    </a> 
+                 </li>   <li><div class="divider"></div></li> <li> <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank"> <i class="fa fa-github-square fa-fw"></i>Fork Me </a> </li>  </ul>
+
 </div>
 
         </div>
@@ -658,7 +651,7 @@ $(function () {
     var OriginTitile = document.title, 
        st; 
    document.addEventListener("visibilitychange", function () {
-      document.hidden ? (document.title = "页面崩溃了404", clearTimeout(st)) : (document.title = "又好了~🙈~🙈~", st = setTimeout(function () 
+      document.hidden ? (document.title = "页面崩溃了404~🙈", clearTimeout(st)) : (document.title = "逗你玩的~🙈", st = setTimeout(function () 
       { document.title = OriginTitile
        }, 3e3)) 
    }) 
