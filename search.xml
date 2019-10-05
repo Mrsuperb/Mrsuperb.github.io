@@ -11,19 +11,20 @@
         <content type="html"><![CDATA[<p>Window10 + Clion安装以及环境配置</p><p>安装环境：window10</p><h2 id="MinGW-W64下载与安装"><a href="#MinGW-W64下载与安装" class="headerlink" title="MinGW-W64下载与安装"></a>MinGW-W64下载与安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>下载网站为<a href="https://sourceforge.net/projects/mingw-w64/" target="_blank" rel="noopener">https://sourceforge.net/projects/mingw-w64/</a></p><p><img src="/images/Clion/3.png" alt></p><p>Download就完事了，随后会下载一个MinGW的下载器，打开下载完成的MinGW下载器</p><p>next出现下图</p><p><img src="/images/Clion/4.png" alt></p><p>注意Architecture选项，这里我们选择x86_64。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装路径随便改，然后稍等片刻等安装完成就好了。安装完成后以你讲MinGW安装到D盘为例，按下图方式配置环境变量</p><p><img src="/images/Clion/5.png" alt></p><p>配置完成后打开命令行窗口输入</p><pre><code class="javascript">gcc -vg++ -v</code></pre><p>若出现以下二图则说明环境配置成功</p><p><img src="/images/Clion/6.png" alt></p><p><img src="/images/Clion/7.png" alt></p><h2 id="CMake-下载以及安装"><a href="#CMake-下载以及安装" class="headerlink" title="CMake 下载以及安装"></a>CMake 下载以及安装</h2><h3 id="下载-1"><a href="#下载-1" class="headerlink" title="下载"></a>下载</h3><p>进入CMake官网<a href="https://cmake.org/download/" target="_blank" rel="noopener">https://cmake.org/download/</a></p><p><img src="/images/Clion/8.png" alt></p><p>这里我们选择win64-x64，直接下载</p><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>CMake安装比较简单， 解压下载后的压缩包，随后如同之前图的环境加入方式，将环境变量bin加入即可，加入后打开命令控制窗口输入</p><pre><code class="javascript">cmake --version</code></pre><p>输出结果为下图，则说明cmake安装成功</p><p><img src="/images/Clion/9.png" alt></p><h2 id="CLion-下载安装以及激活"><a href="#CLion-下载安装以及激活" class="headerlink" title="CLion 下载安装以及激活"></a>CLion 下载安装以及激活</h2><h3 id="下载-2"><a href="#下载-2" class="headerlink" title="下载"></a>下载</h3><p>Clion官方下载：<a href="http://www.jetbrains.com/clion/?fromFooter" target="_blank" rel="noopener">http://www.jetbrains.com/clion/?fromFooter</a></p><p>安装过程就是一路下一步的绿灯</p><h3 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h3><p>JetBrains 有很多软件对在校教育者都是免费提供使用的，良心还是不错的。</p><p><img src="/images/Clion/1.png" alt></p><p>你需要注册一个你们学习官方的邮箱，然后在<a href="https://www.jetbrains.com/zh/student/" target="_blank" rel="noopener">https://www.jetbrains.com/zh/student/</a>网站进行申请</p><p><img src="/images/Clion/2.png" alt></p><p>点击立即申请，然后填写申请表，填完后提交，会给你注册邮箱发送一个激活邮件，点击后再注册账号得到用于Clion激活的账号。打开Clion，刚进去会提示你激活方式，选择账号激活，把刚才Clion激活账号输入进去，Clion成功激活。</p><h3 id="测试软件"><a href="#测试软件" class="headerlink" title="测试软件"></a>测试软件</h3><p>按照之间的步骤，系统会自动配置环境，这里我们新建一个工程，直接运行hello world</p><p><img src="/images/Clion/10.png" alt></p><p><img src="/images/Clion/11.png" alt></p><p>直接输出结果，可以快乐编程了</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>这段时间忙着跑实验，开会。10.1过后再更吧。。。。天天忙成狗 没时间打理</title>
-      <link href="/2019/09/25/tuotuotuo/"/>
-      <url>/2019/09/25/tuotuotuo/</url>
-      
-        <content type="html"><![CDATA[<p>这段时间忙着跑实验，开会。10.1过后再更吧。。。。天天忙成狗 没时间打理</p>]]></content>
+      <categories>
+          
+          <category> 环境搭建 </category>
+          
+      </categories>
       
       
+        <tags>
+            
+            <tag> Clion </tag>
+            
+            <tag> window10 </tag>
+            
+        </tags>
       
     </entry>
     
