@@ -451,7 +451,7 @@
             <div id="articleContent">
                 <h2 id="一-工作站环境说明"><a href="#一-工作站环境说明" class="headerlink" title="一 工作站环境说明"></a>一 工作站环境说明</h2><p>系统：ubuntu16.04LST<br>显卡：TITAN XP<br>ps：<strong>工作站内核最好不要更新，工作站稳定第一</strong></p>
 <h2 id="二-显卡驱动安装"><a href="#二-显卡驱动安装" class="headerlink" title="二 显卡驱动安装"></a>二 显卡驱动安装</h2><p> 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看，我在笔记本上安装利用ppa的形式安装的，感觉更简便一点。下面附上第一篇博客的链接<br> <a href="https://blog.csdn.net/weixin_43149427/article/details/89813192" target="_blank" rel="noopener">第一篇博客传送门</a><br>这篇讲的是工作站的安装方式</p>
-<h3 id="3-1-禁用nouveau"><a href="#3-1-禁用nouveau" class="headerlink" title="3.1 禁用nouveau"></a>3.1 禁用nouveau</h3><pre><code class="javascript"> ctrl+alt+T  //打开终端
+<h3 id="2-1-禁用nouveau"><a href="#2-1-禁用nouveau" class="headerlink" title="2.1 禁用nouveau"></a>2.1 禁用nouveau</h3><pre><code class="javascript"> ctrl+alt+T  //打开终端
 sudo gedit /etc/modprobe.d/blacklist.conf  //进入系统启动黑名单</code></pre>
 <p>在最后一行加入</p>
 <pre><code class="javascript">blacklist nouveau</code></pre>
@@ -459,7 +459,7 @@ sudo gedit /etc/modprobe.d/blacklist.conf  //进入系统启动黑名单</code><
 <pre><code class="javascript">sudo update-initramfs -u
 更新过后会输出  update-initramfs ：Generating &#39;.......后面的忘了</code></pre>
 <p>重新启动你的电脑，进入系统后，如果你的分辨率变小（图标变大）就说明你的nouveau成功禁用了</p>
-<h3 id="3-2-安装驱动"><a href="#3-2-安装驱动" class="headerlink" title="3.2 安装驱动"></a>3.2 安装驱动</h3><p>博主选用的是NVIDIA-Linux-x86_64-430.09.run  关于显卡驱动的下载以及版本说明还是上一条传送门<br>找到你下载的显卡驱动的位置，进入终端首先更改驱动的运行权限，变为可执行文件</p>
+<h3 id="2-2-安装驱动"><a href="#2-2-安装驱动" class="headerlink" title="2.2 安装驱动"></a>2.2 安装驱动</h3><p>博主选用的是NVIDIA-Linux-x86_64-430.09.run  关于显卡驱动的下载以及版本说明还是上一条传送门<br>找到你下载的显卡驱动的位置，进入终端首先更改驱动的运行权限，变为可执行文件</p>
 <pre><code class="javascript">shuo chmod 777 NVIDIA-Linux-x86_64-430.09.run</code></pre>
 <p>777当然是代表辣个男人啦。不！当然是代表三中用户的 可执行做可读可写了！-rwxrwxrwx<br>然后按下ctrl+alt+F1 进入tty1 </p>
 <pre><code class="javascript">“输入你的用户名”
