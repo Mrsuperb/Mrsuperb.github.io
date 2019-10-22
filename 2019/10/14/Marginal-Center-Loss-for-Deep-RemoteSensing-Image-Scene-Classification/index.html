@@ -4,12 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++三目运算符, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="keywords" content="Marginal Center Loss for Deep Remote Sensing Image Scene Classification, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
     <meta name="baidu-site-verification" content="qX6Yx5Fait">
     <meta name="google-site-verification" content="qX6Yx5Fait">
-    <meta name="description" content="上一次学习C++ 还是大一，现在都研二老狗了、、哎时光荏苒想当年好几本C++ 都被撕了用来垫饭了，可惜了。果然出来混都是要还的，废话不多说了。
-当前常看到的三目运算符是这个样子的
-c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
+    <meta name="description" content="Marginal Center Loss for Deep Remote Sensing Image Scene Classification | 秋の歌">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++三目运算符 | 秋の歌</title>
+    <title>Marginal Center Loss for Deep Remote Sensing Image Scene Classification | 秋の歌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -268,13 +266,13 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        C++三目运算符
+                        Marginal Center Loss for Deep Remote Sensing Image Scene Classification
                     </div>
                 </div>
             </div>
@@ -384,28 +382,11 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        
-                        <a href="/tags/C/" target="_blank">
-                            <span class="chip bg-color">C++</span>
-                        </a>
-                        
-                        <a href="/tags/三目运算符/" target="_blank">
-                            <span class="chip bg-color">三目运算符</span>
-                        </a>
-                        
+                        <span class="chip bg-color">无标签</span>
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                        <a href="/categories/编程学习笔记/" class="post-category" target="_blank">
-                            编程学习笔记
-                        </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -413,7 +394,7 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-05
+                    2019-10-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -427,7 +408,7 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    291
+                    0
                 </div>
                 
 
@@ -450,44 +431,7 @@ c = a&amp;lt;b?a:b这个运算符号的意思是对比a.b两">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>上一次学习C++ 还是大一，现在都研二老狗了、、哎时光荏苒想当年好几本C++ 都被撕了用来垫饭了，可惜了。果然出来混都是要还的，废话不多说了。</p>
-<p>当前常看到的三目运算符是这个样子的</p>
-<pre><code>c = a&lt;b?a:b</code></pre><p>这个运算符号的意思是对比a.b两值得大小，若a&lt;b则 将a的值传输给c，否则将b的值传输给c</p>
-<p>以下为例</p>
-<pre><code class="javascript">#include &lt;iostream&gt;
-
-using namespace std;
-
-void test() {
-    int a = 10;
-    int b = 20;
-    int c = a &lt; b ? a : b;
-    cout &lt;&lt; c &lt;&lt; endl;
-}
-
-int main() {
-    test();
-}
-
-输出结果：10</code></pre>
-<p>这时候考虑到c++的左值与右值概念，想看一下三目运算符是否可以当做左值进行运算，程序如下：</p>
-<pre><code>#include &lt;iostream&gt;
-
-using namespace std;
-
-void test3() {
-    int a = 10;
-    int b = 20;
-    (a &lt; b ? a : b) = 100;
-    cout &lt;&lt; &quot;a&quot; &lt;&lt; a &lt;&lt; endl;
-    cout &lt;&lt; &quot;b&quot; &lt;&lt; b &lt;&lt; endl;
-}
-
-int main() {
-    test3();
-}
-输出结果   a:100 b：20</code></pre><p>可知，实际上执行完三目运算后，其值经过内部比较，输出代表值已经为值较小的a</p>
-
+                
             </div>
             <hr />
 
@@ -645,9 +589,9 @@ int main() {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《C++三目运算符》
+                    《Marginal Center Loss for Deep Remote Sensing Image Scene Classification》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/05/C-三目运算符/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/14/Marginal-Center-Loss-for-Deep-RemoteSensing-Image-Scene-Classification/" property="cc:attributionName"
                rel="cc:attributionURL">
                 秋歌
             </a> 采用
@@ -950,29 +894,51 @@ int main() {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/14/Marginal-Center-Loss-for-Deep-RemoteSensing-Image-Scene-Classification/">
+                <a href="/2019/10/22/leecode刷题日记/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Marginal Center Loss for Deep Remote Sensing Image Scene Classification">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="leecode刷题日记(1)">
                         
-                        <span class="card-title">Marginal Center Loss for Deep Remote Sensing Image Scene Classification</span>
+                        <span class="card-title">leecode刷题日记(1)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            废话不多说，人生苦短我用python  立下此贴作为学习见证以及补充
+刷题顺序就从TOP100开始刷起  之前刷的25道 回顾的时候再补充上,先从简单题刷起来
+一.矩阵旋转问题1.1 题目说明给定一个 n × n 的二维矩阵表示一个图像。
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-22
                         </span>
                         <span class="publish-author">
                             
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/leecode/" class="post-category" target="_blank">
+                                    leecode
+                                </a>
+                            
+                            
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/leecode第一天/" target="_blank">
+                        <span class="chip bg-color">leecode第一天</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -984,35 +950,33 @@ int main() {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/04/Clion安装以及环境配置/">
+                <a href="/2019/10/05/C-三目运算符/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Window10 + Clion安装以及环境配置">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C++三目运算符">
                         
-                        <span class="card-title">Window10 + Clion安装以及环境配置</span>
+                        <span class="card-title">C++三目运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Window10 + Clion安装以及环境配置
-安装环境：window10
-MinGW-W64下载与安装下载下载网站为https://sourceforge.net/projects/mingw-w64/
-
-Download就完事了，随后
+                            上一次学习C++ 还是大一，现在都研二老狗了、、哎时光荏苒想当年好几本C++ 都被撕了用来垫饭了，可惜了。果然出来混都是要还的，废话不多说了。
+当前常看到的三目运算符是这个样子的
+c = a&lt;b?a:b这个运算符号的意思是对比a.b两
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
+                            <a href="/categories/编程学习笔记/" class="post-category" target="_blank">
+                                    编程学习笔记
                                 </a>
                             
                             
@@ -1022,12 +986,12 @@ Download就完事了，随后
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Clion/" target="_blank">
-                        <span class="chip bg-color">Clion</span>
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/window10/" target="_blank">
-                        <span class="chip bg-color">window10</span>
+                    <a href="/tags/三目运算符/" target="_blank">
+                        <span class="chip bg-color">三目运算符</span>
                     </a>
                     
                 </div>
