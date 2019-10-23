@@ -4,11 +4,13 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="keywords" content="leecode刷题日记一, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
     <meta name="baidu-site-verification" content="qX6Yx5Fait">
     <meta name="google-site-verification" content="qX6Yx5Fait">
-    <meta name="description" content="一 工作站环境说明系统：ubuntu16.04LST显卡：TITAN XPps：工作站内核最好不要更新，工作站稳定第一
-二 显卡驱动安装 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看">
+    <meta name="description" content="废话不多说，人生苦短我用python  立下此贴作为学习见证以及补充
+刷题顺序就从TOP100开始刷起  之前刷的25道 回顾的时候再补充上,先从简单题刷起来
+一.矩阵旋转问题1.1 题目说明给定一个 n × n 的二维矩阵表示一个图像。
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程 | 秋の歌</title>
+    <title>leecode刷题日记一 | 秋の歌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -267,13 +269,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/banner/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/25.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程
+                        leecode刷题日记一
                     </div>
                 </div>
             </div>
@@ -384,12 +386,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/tensorflow-gpu/" target="_blank">
-                            <span class="chip bg-color">tensorflow-gpu</span>
+                        <a href="/tags/python/" target="_blank">
+                            <span class="chip bg-color">python</span>
                         </a>
                         
-                        <a href="/tags/ubuntu/" target="_blank">
-                            <span class="chip bg-color">ubuntu</span>
+                        <a href="/tags/leecode第一天/" target="_blank">
+                            <span class="chip bg-color">leecode第一天</span>
                         </a>
                         
                     </div>
@@ -400,8 +402,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                            环境搭建
+                        <a href="/categories/leecode/" class="post-category" target="_blank">
+                            leecode
                         </a>
                         
                     </div>
@@ -412,7 +414,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-20
+                    2019-10-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -426,7 +428,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.3k
                 </div>
                 
 
@@ -449,64 +451,151 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一-工作站环境说明"><a href="#一-工作站环境说明" class="headerlink" title="一 工作站环境说明"></a>一 工作站环境说明</h2><p>系统：ubuntu16.04LST<br>显卡：TITAN XP<br>ps：<strong>工作站内核最好不要更新，工作站稳定第一</strong></p>
-<h2 id="二-显卡驱动安装"><a href="#二-显卡驱动安装" class="headerlink" title="二 显卡驱动安装"></a>二 显卡驱动安装</h2><p> 我的第一篇博客介绍了CUDA 以及CUDNN 以及显卡各个版本号之间的关系。有兴趣的同学可以过去看一看，我在笔记本上安装利用ppa的形式安装的，感觉更简便一点。下面附上第一篇博客的链接<br> <a href="https://blog.csdn.net/weixin_43149427/article/details/89813192" target="_blank" rel="noopener">第一篇博客传送门</a><br>这篇讲的是工作站的安装方式</p>
-<h3 id="2-1-禁用nouveau"><a href="#2-1-禁用nouveau" class="headerlink" title="2.1 禁用nouveau"></a>2.1 禁用nouveau</h3><pre><code class="javascript"> ctrl+alt+T  //打开终端
-sudo gedit /etc/modprobe.d/blacklist.conf  //进入系统启动黑名单</code></pre>
-<p>在最后一行加入</p>
-<pre><code class="javascript">blacklist nouveau</code></pre>
-<p>保存，然后在终端输入，更新下之前的禁用设置</p>
-<pre><code class="javascript">sudo update-initramfs -u
-更新过后会输出  update-initramfs ：Generating &#39;.......后面的忘了</code></pre>
-<p>重新启动你的电脑，进入系统后，如果你的分辨率变小（图标变大）就说明你的nouveau成功禁用了</p>
-<h3 id="2-2-安装驱动"><a href="#2-2-安装驱动" class="headerlink" title="2.2 安装驱动"></a>2.2 安装驱动</h3><p>博主选用的是NVIDIA-Linux-x86_64-430.09.run  关于显卡驱动的下载以及版本说明还是上一条传送门<br>找到你下载的显卡驱动的位置，进入终端首先更改驱动的运行权限，变为可执行文件</p>
-<pre><code class="javascript">shuo chmod 777 NVIDIA-Linux-x86_64-430.09.run</code></pre>
-<p>777当然是代表辣个男人啦。不！当然是代表三中用户的 可执行做可读可写了！-rwxrwxrwx<br>然后按下ctrl+alt+F1 进入tty1 </p>
-<pre><code class="javascript">“输入你的用户名”
-“输入用户名对应密码”</code></pre>
-<p>关停图形界面</p>
-<pre><code class="javascript">sudo service lightdm stop</code></pre>
-<p>找到你显卡驱动的位置，输入</p>
-<pre><code class="javascript">sudo ./NVIDIA-Linux-x86_64-430.09.run -–no-opengl-files -–no-nouveau-check ––no-x-check</code></pre>
-<p>–no-opengl-files 只安装驱动文件，不安装OpenGL文件。这个参数最重要<br>–no-nouveau-check 安装驱动时不检查nouveau<br>–no-x-check 安装驱动时不检查X服务<br>这三个博主是参考网上的解释。我安装的时候都加上了。因人而异，我们实验室另一台图站就不行 就只用了第一个才能装上<br>然后输入你的密码 稍等片刻即可<br>随后进入类似图形界面的驱动安装界面<br>两次左边，选择继续安装。出现安装进度条后 两次选择默认即可。安装完成后 在终端输入nvidia-smi<br>我们就可以看到类似下图的界面<br><img src="https://img-blog.csdnimg.cn/20190526101049248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="nvidia_smi效果"><br>这张图片是我上个博客的，由于之前安装的版本号是418.56.这里显示的Driver Version是418.56<br>再次重新启动电脑如果你的电脑分辨率恢复正常就说明我们的驱动显卡安装完成，在这当中有些小伙伴可能会出现循环登录的情况。这一点听大哥说法是–no-opengl-files  –no-nouveau-check  –no-x-check ，这三个参数的原因可能你的只需要加入一个–no-opengl-files ，这一点博主也不是很了解。</p>
-<h2 id="三-安装CUDA"><a href="#三-安装CUDA" class="headerlink" title="三 安装CUDA"></a>三 安装CUDA</h2><p><img src="https://img-blog.csdnimg.cn/20190504140145732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA与显卡驱动版本对应关系图"><br>去网站下载驱动<br><a href="https://developer.nvidia.com/cuda-release-candidate-download" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-release-candidate-download</a><br>根据自己的系统下载CUDA 这里就不放图了 但是要记住 下载runfile(local)文件<br>下载完后找到下载CUDA文件的位置 右键打开终端 输入：<br>在安装CUDA的过程中会提示，CUDA10.0 设备不可用 在安装那一步 -overrid  我百度查到的结果是编译器不兼容导致的。</p>
-<pre><code class="javascript">sudo chmod +x cuda_10.0.130_410.48_linux.run
-sudo ./cuda_10.0.130_410.48_linux.run -overrid</code></pre>
-<p>注意上面的数字根据自己下载的版本号更改 </p>
-<pre><code>**在安装CUDA的时候 注意不要安装CUDA所带的驱动 由于我们之前安装了显卡驱动了 所以不需要重复安装**</code></pre><p>然后就是配置环境 输入终端命令</p>
-<pre><code class="javascript">sudo gedit ~/.bashrc</code></pre>
-<p>进入编辑模式将下面两条命令加入文档最后面：下面的序列号也需要根据自己的CUDA版本号更改</p>
-<pre><code class="javascript">export PATH=/usr/local/cuda-10.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH</code></pre>
-<p>加入后在终端输入，从而使得环境生效</p>
-<pre><code class="javascript">source ~/.bashrc</code></pre>
-<p>在终端输入，即可得到我们的CUDA信息 10.0.130</p>
-<pre><code class="javascript">nvcc -V</code></pre>
-<p>现实如下 可见我们安装的CUDA版本为10.0.130</p>
-<pre><code class="javascript">maqiushuo@maqiushuo-Aspire-E5-572G:~$ nvcc -V
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2018 NVIDIA Corporation
-Built on Sat_Aug_25_21:08:01_CDT_2018
-Cuda compilation tools, release 10.0, V10.0.130</code></pre>
-<p>验证<br>打开终端输入</p>
-<pre><code class="javascript">cd /usr/local/cuda/samples/1_Utilities/deviceQuery 
-sudo make
-./deviceQuery</code></pre>
-<p>得到以下结果，及说名CUDA安装成功<br><img src="https://img-blog.csdnimg.cn/20190521211742747.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="CUDA测试截图"></p>
-<h2 id="四-安装cuDNN"><a href="#四-安装cuDNN" class="headerlink" title="四 安装cuDNN"></a>四 安装cuDNN</h2><p>打开网站<br><a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a></p>
-<p>下载自己需要的cuDNN</p>
-<p><img src="https://img-blog.csdnimg.cn/20190504145205682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="cuDNN下载界面"><br>我下载的版本为 10.0    下的   cuDNN library for linux<br>下载完成后输入以下命令<br>首先进入你下载文件的文件夹<br>然后解压文件运行以下代码，注意 解压的文件是你下载的文件。。我这里只是提供个例子，当时下载的到底是什么名字我也忘了，所以下面代码的第一行是解压你下载的安装包.要根据你自己的cudnn版本号更改的</p>
-<pre><code class="javascript">tar -xzvf cudnn-10.0-linux-x64-v7.5.0.56.tgz
-sudo cp cuda/include/cudnn.h /usr/local/cuda/include
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
-sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</code></pre>
-<p>到这里cuDNN也已经配置完成</p>
-<h2 id="五-安装anaconda-以及tensorflow-gpu"><a href="#五-安装anaconda-以及tensorflow-gpu" class="headerlink" title="五 安装anaconda 以及tensorflow-gpu"></a>五 安装anaconda 以及tensorflow-gpu</h2><h3 id="5-1-安装anaconda"><a href="#5-1-安装anaconda" class="headerlink" title="5.1 安装anaconda"></a>5.1 安装anaconda</h3><pre><code class="javascript">bash Anaconda3-5.2.0-Linux-x86_64.sh</code></pre>
-<h3 id="5-2-在anaconda当中安装-tensorflow虚拟环境这里将其命名为tensorflow"><a href="#5-2-在anaconda当中安装-tensorflow虚拟环境这里将其命名为tensorflow" class="headerlink" title="5.2 在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow"></a>5.2 在anaconda当中安装 tensorflow虚拟环境这里将其命名为tensorflow</h3><pre><code class="javascript">conda create -n tensorflow pip python=3.6</code></pre>
-<h3 id="5-3-激活tensorflow-之前安装的虚拟环境"><a href="#5-3-激活tensorflow-之前安装的虚拟环境" class="headerlink" title="5.3 激活tensorflow(之前安装的虚拟环境)"></a>5.3 激活tensorflow(之前安装的虚拟环境)</h3><pre><code class="javascript">source activate tensorflow</code></pre>
-<h3 id="5-4-安装tensorflow-gpu在tensorflow当中-之前安装的虚拟环境"><a href="#5-4-安装tensorflow-gpu在tensorflow当中-之前安装的虚拟环境" class="headerlink" title="5.4 安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)"></a>5.4 安装tensorflow-gpu在tensorflow当中(之前安装的虚拟环境)</h3><p>注意不同版本的tensorflow-gpu 对应的CUDA也是不同的<br><a href="https://www.tensorflow.org/install/source" target="_blank" rel="noopener">https://www.tensorflow.org/install/source</a>  从这个网站查找对应你CUDA版本的gpu，我的电脑不能翻墙只能放一张老图<br><img src="https://img-blog.csdnimg.cn/20190504151111420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="ternsorflow-gpu 与CUDA 对应关系"><br>从以上对应版本号上安装对应版本的tensorflow-gpu</p>
-<pre><code class="javascript">pip install tensorflow-gpu == 1.13.1</code></pre>
-<h3 id="5-5-验证"><a href="#5-5-验证" class="headerlink" title="5.5 验证"></a>5.5 验证</h3><p><img src="https://img-blog.csdnimg.cn/20190504151306674.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzE0OTQyNw==,size_16,color_FFFFFF,t_70" alt="验证"></p>
+                <p>废话不多说，人生苦短我用python  立下此贴作为学习见证以及补充</p>
+<p>刷题顺序就从TOP100开始刷起  之前刷的25道 回顾的时候再补充上,先从简单题刷起来</p>
+<h2 id="一-矩阵旋转问题"><a href="#一-矩阵旋转问题" class="headerlink" title="一.矩阵旋转问题"></a>一.矩阵旋转问题</h2><h3 id="1-1-题目说明"><a href="#1-1-题目说明" class="headerlink" title="1.1 题目说明"></a>1.1 题目说明</h3><p>给定一个 n × n 的二维矩阵表示一个图像。</p>
+<p>将图像顺时针旋转 90 度。</p>
+<p>说明：</p>
+<p>你必须在原地旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要使用另一个矩阵来旋转图像</p>
+<p>实例：</p>
+<p>给定 matrix =<br>[<br>  [1,2,3],<br>  [4,5,6],<br>  [7,8,9]<br>],</p>
+<p>原地旋转输入矩阵，使其变为:<br>[<br>  [7,4,1],<br>  [8,5,2],<br>  [9,6,3]<br>]</p>
+<h3 id="1-2思路"><a href="#1-2思路" class="headerlink" title="1.2思路"></a>1.2思路</h3><p>按照题目要求，不可以使用另一个矩阵，那么其操作大多数为矩阵内互换位置，经过思考，若要求矩阵顺时针旋转90度，实际操作两部分即可完成：</p>
+<pre><code class="java">1.matrix[i,j],matrix[j,i] = matrix[j,i],matrx[i,j] ##对原矩阵进行转置变化
+2.matrix[i][j],matrix[i][len(matrix)-1-j] = matrix[i][len(matrix)-1-j],matrix[i][j] ##通过对列遍历一半 实现对列的更换</code></pre>
+<h3 id="1-3-源码如下"><a href="#1-3-源码如下" class="headerlink" title="1.3 源码如下"></a>1.3 源码如下</h3><pre><code class="java">class Solution:
+    def rotate(self, matrix):
+        &quot;&quot;&quot;
+        Do not return anything, modify matrix in-place instead.   先转置，在换列
+        &quot;&quot;&quot;
+        for x in range(len(matrix)):                                 #行列互换转置  matrix[i][j],martix[j][i] = matrix[j][i],matrix[i][j] 利用python的换值机制，两个值同时互换
+            for y in range(x,len(matrix)):
+
+                matrix[x][y],matrix[y][x] = matrix[y][x],matrix[x][y]
+
+
+        for i in range(len(matrix)):                                 #列取反      matrix[i][j] = matrix[i][len(matrix)-1-j] 数组运算中需要减1，由于其从0计算
+            for j in range(int(len(matrix)/2)):
+                matrix[i][j],matrix[i][len(matrix)-1-j] = matrix[i][len(matrix)-1-j],matrix[i][j]
+
+        return matrix
+
+
+
+if __name__ == &quot;__main__&quot;:
+
+    leecode = Solution()
+    result = leecode.rotate([[1,2,3],[4,5,6],[7,8,9]])
+    print(result)</code></pre>
+<h3 id="1-4-补充-：日后留坑"><a href="#1-4-补充-：日后留坑" class="headerlink" title="1.4 补充 ：日后留坑"></a>1.4 补充 ：日后留坑</h3><h2 id="二-汉明距离问题"><a href="#二-汉明距离问题" class="headerlink" title="二.汉明距离问题"></a>二.汉明距离问题</h2><h3 id="2-1-题目说明"><a href="#2-1-题目说明" class="headerlink" title="2.1 题目说明"></a>2.1 题目说明</h3><p>两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。</p>
+<p>给出两个整数 x 和 y，计算它们之间的汉明距离。</p>
+<p>注意：<br>0 ≤ x, y &lt; 2^31.</p>
+<p>示例：</p>
+<p><strong>输入:</strong> x = 1, y = 4</p>
+<p><strong>输出:</strong> 2</p>
+<p><strong>解释:</strong><br>1   (0 0 0 1)<br>4   (0 1 0 0)</p>
+<p>共有两个位置不同</p>
+<h3 id="2-2-思路"><a href="#2-2-思路" class="headerlink" title="2.2 思路"></a>2.2 思路</h3><p>1.将x，y 分别转化为二进制list</p>
+<p>2.求出x,y list的差值list_result</p>
+<p>3.对list_result进行遍历，判断其中值为1的个数，作为输出</p>
+<h3 id="2-3-源码"><a href="#2-3-源码" class="headerlink" title="2.3 源码"></a>2.3 源码</h3><pre><code class="python">class Solution:
+    def hammingDistance(self, x: int, y: int) -&gt; int:
+
+        x_conversion,y_conversion,result = [],[],[]
+        cout = 0
+        while x//2 != 0:                                       #x 二进制转化
+            x,tmp = divmod(x,2)
+            x_conversion.append(tmp)
+        x_conversion.append(x)
+
+
+        while y//2 != 0:                                       #y 二进制转化
+            y,tmp = divmod(y,2)
+            y_conversion.append(tmp)
+        y_conversion.append(y)
+
+        x_len,y_len = len(x_conversion),len(y_conversion)
+        if x_len&gt;y_len:
+            for i in range(x_len-y_len):
+                y_conversion.append(0)
+        elif x_len&lt;y_len:
+            for i in range(y_len-x_len):
+                x_conversion.append(0)
+        result = [x_conversion[i] - y_conversion[i] for i in range(len(x_conversion))]
+        for i in range(len(result)):
+            if result[i] != 0:
+                cout += 1
+
+
+        return cout
+
+if __name__ == &quot;__main__&quot;:
+    leecode = Solution()
+    print(leecode.hammingDistance(11,6))</code></pre>
+<p>运行结果如下图</p>
+<p><img src="/images/leecode/first/result_hanming.png" alt="result_hanming.png"></p>
+<h3 id="2-4-补充"><a href="#2-4-补充" class="headerlink" title="2.4 补充"></a>2.4 补充</h3><p>看了看其他大神的思路。。。瞬间感觉自己跟个傻子一样。。。</p>
+<p>人家只用了一句话</p>
+<pre><code class="py">return bin(x ^ y).count(&#39;1&#39;)</code></pre>
+<p>其中bin为python 当中的内置函数，作用为将其变为二进制数值</p>
+<p>python中 ^表示异或，不相同即为1，两个整数经过异或，即现其转化为二级制，对位异或后再转化为10进制即 4^2 值为 6</p>
+<p>.count 即为计算值为1的个数。。天啊，牛皮</p>
+<h2 id="三-只出现一次的数字number"><a href="#三-只出现一次的数字number" class="headerlink" title="三 只出现一次的数字number/)"></a>三 只出现一次的数字number/)</h2><h3 id="3-1-问题描述"><a href="#3-1-问题描述" class="headerlink" title="3.1 问题描述"></a>3.1 问题描述</h3><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明：</p>
+<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例：</p>
+<p><strong>输入:</strong> [2,2,1]<br><strong>输出:</strong> 1</p>
+<h3 id="3-2-思路"><a href="#3-2-思路" class="headerlink" title="3.2 思路"></a>3.2 思路</h3><p>暴力求解法：</p>
+<p>python 中有个很暴力的除重方法，他的名字叫set</p>
+<p>1.通过set 对原数组去重</p>
+<p>2.对set中的值进行遍历，利用count，查看是否在原数组中出现次数为1</p>
+<p>3.是1的话，即输出</p>
+<p>理所应当的爆炸了，原因在于。。python那部分计算耗费时间太多，超时了</p>
+<p>哈希方法</p>
+<p>1.对原数组进行遍历，构建哈希表</p>
+<p>2.key为原数组值，value为出现次数，通过dict.get函数查找key。若之前不存在则为1，若之前存在即为1+1=2</p>
+<p>3.对构建的哈希表进行遍历，遍历其key值，若key ==1 输出其val</p>
+<p>这个能沟通过，利用的是哈希表查找速度邀标 暴力count速度快</p>
+<h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><pre><code class="python">class Solution(object):                     ## 暴力法
+
+    def singleNumber(self, nums):
+        num_set = set(nums)
+        for num in num_set:
+           if nums.count(num) == 1:
+              return num
+
+
+if __name__ == &quot;__main__&quot;:
+    leecode = Solution()
+    print(leecode.singleNumber([100,100,1]))</code></pre>
+<pre><code class="py">class Solution(object):                   ## 哈希方法
+
+    def singleNumber(self, nums):
+        nums_dict = {}
+        for num in nums:
+            nums_dict[num] = nums_dict.get(num,0) + 1
+
+
+        for key,val in nums_dict.items():
+            if val == 1:
+                return key
+
+
+
+if __name__ == &quot;__main__&quot;:
+    leecode = Solution()
+    print(leecode.singleNumber([100,100,1]))</code></pre>
+<h3 id="3-3-补充"><a href="#3-3-补充" class="headerlink" title="3.3 补充"></a>3.3 补充</h3><p>神来之笔。。看了大神的算法 我又哭</p>
+<ol>
+<li><p>set 去重</p>
+</li>
+<li><p>对去重部分求和</p>
+</li>
+<li><p>减去原数组求和！</p>
+</li>
+<li><p>牛皮！</p>
+</li>
+</ol>
 
             </div>
             <hr />
@@ -665,9 +754,9 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Ubuntu16.04LST+tensorflow—gpu图形工作站安装教程》
+                    《leecode刷题日记一》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/20/Ubuntu16-04LST-tensorflow-GPU标准工作站安装/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/22/leecode刷题日记一/" property="cc:attributionName"
                rel="cc:attributionURL">
                 秋歌
             </a> 采用
@@ -970,31 +1059,35 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/08/28/python将批量图片以txt文件存储，并读取/">
+                <a href="/2019/10/23/leecode刷题日记二/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="python将批量图片以txt文件存储，并读取">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="leecode刷题日记二">
                         
-                        <span class="card-title">python将批量图片以txt文件存储，并读取</span>
+                        <span class="card-title">leecode刷题日记二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将图片存储为txt的原因在将图片数据输入卷积神经网络时，如果通过np.load进行输入，常常会出现内存爆炸的问题，为节约内存，将图片按照txt文件读取，是一种非常好的读取方式，当然啊，如今ternsorflow出的API也相当不错。技多不压
+                            废话不多说，直接开搞
+一 移零问题1.1题目说明给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+示例：
+输入: [0,1,0,3,12]输出: [1,3,12,0,0]
+1.2 思路由于题目要
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-23
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
+                            <a href="/categories/leecode/" class="post-category" target="_blank">
+                                    leecode
                                 </a>
                             
                             
@@ -1008,8 +1101,8 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                         <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/深度学习编程/" target="_blank">
-                        <span class="chip bg-color">深度学习编程</span>
+                    <a href="/tags/leecode第二天/" target="_blank">
+                        <span class="chip bg-color">leecode第二天</span>
                     </a>
                     
                 </div>
@@ -1023,33 +1116,33 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/08/20/ubuntu显卡驱动+tensorflow—gpu安装教程/">
+                <a href="/2019/10/05/C-三目运算符/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C++三目运算符">
                         
-                        <span class="card-title">Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程</span>
+                        <span class="card-title">C++三目运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Ubuntu+CUDA10.0+cuDNN7.5.0+anaconda+tensorflow—gpu安装教程
-配置：ubuntu19.04显卡：GEFORCE 840M  
-一  Ubuntu19.04安装网络上有很多文章，首先博主是根据B
+                            上一次学习C++ 还是大一，现在都研二老狗了、、哎时光荏苒想当年好几本C++ 都被撕了用来垫饭了，可惜了。果然出来混都是要还的，废话不多说了。
+当前常看到的三目运算符是这个样子的
+c = a&lt;b?a:b这个运算符号的意思是对比a.b两
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/环境搭建/" class="post-category" target="_blank">
-                                    环境搭建
+                            <a href="/categories/编程学习笔记/" class="post-category" target="_blank">
+                                    编程学习笔记
                                 </a>
                             
                             
@@ -1059,12 +1152,12 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tensorflow-gpu/" target="_blank">
-                        <span class="chip bg-color">tensorflow-gpu</span>
+                    <a href="/tags/C/" target="_blank">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/ubuntu/" target="_blank">
-                        <span class="chip bg-color">ubuntu</span>
+                    <a href="/tags/三目运算符/" target="_blank">
+                        <span class="chip bg-color">三目运算符</span>
                     </a>
                     
                 </div>

@@ -4,10 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Marginal Center Loss for Deep Remote Sensing Image Scene Classification, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
+    <meta name="keywords" content="MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition, CV DeepLearning qiushuo 自然语言处理 深度学习 python leecode">
     <meta name="baidu-site-verification" content="qX6Yx5Fait">
     <meta name="google-site-verification" content="qX6Yx5Fait">
-    <meta name="description" content="Marginal Center Loss for Deep Remote Sensing Image Scene Classification | 秋の歌">
+    <meta name="description" content="Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition 是2017年CVPR一篇关于细粒度的文章文章传送门
+一 文章简">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Marginal Center Loss for Deep Remote Sensing Image Scene Classification | 秋の歌</title>
+    <title>MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition | 秋の歌</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -266,13 +267,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Marginal Center Loss for Deep Remote Sensing Image Scene Classification
+                        MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition
                     </div>
                 </div>
             </div>
@@ -382,11 +383,32 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/论文分享/" target="_blank">
+                            <span class="chip bg-color">论文分享</span>
+                        </a>
+                        
+                        <a href="/tags/深度学习/" target="_blank">
+                            <span class="chip bg-color">深度学习</span>
+                        </a>
+                        
+                        <a href="/tags/细粒度/" target="_blank">
+                            <span class="chip bg-color">细粒度</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/论文分享/" class="post-category" target="_blank">
+                            论文分享
+                        </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -394,7 +416,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-14
+                    2019-09-05
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -408,14 +430,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
                 
@@ -431,7 +453,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <p>Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition 是2017年CVPR一篇关于细粒度的文章<br><a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Zheng_Learning_Multi-Attention_Convolutional_ICCV_2017_paper.pdf" target="_blank" rel="noopener">文章传送门</a></p>
+<h2 id="一-文章简介"><a href="#一-文章简介" class="headerlink" title="一 文章简介"></a>一 文章简介</h2><p>文章提出了一种采用弱监督学习的多注意力的卷积神经网络，主要要解决以下两个问题：<br>                 1.当前的细粒度分类方法主要依赖于具有区分度的局部信息或者基于局部的精准信息，少有将二者联系起来的模型。<br>                 2.基于局部信息的模型，通常需要手工标注注意力区域，这需要耗费大量人力。</p>
+<h2 id="二-文章的亮点"><a href="#二-文章的亮点" class="headerlink" title="二 文章的亮点"></a>二 文章的亮点</h2><p>1.由于卷积层不同通道对图像的感知敏感性是不同的，文章利用这一点，在通道特征的利用上下了一定功夫，得到不同通道级别的注意力区域<br>2.文章针对生成的注意力区域设置了channel group loss，目的是为了让生成的不同通道级别注意力区域更加有信息性以及代表性</p>
+<h2 id="三-模型"><a href="#三-模型" class="headerlink" title="三 模型"></a>三 模型</h2><p><img src="/images/MACNN/base.png" alt="3.1"></p>
+<p>如图3.1所示，文章认为不同的鸟类，在相同部分，如翅膀，嘴尖，爪子上有的微妙的视觉差异，文章主要利用这一点，分别选取鸟类中具有判别性的区域，输入其设计的多注意力网络，实现对鸟类的判别</p>
+<p><img src="/images/MACNN/basemodel.png" alt="3.2"></p>
+<p>网络的整体结构如图3.2所示，输入一张图片到卷积神经网络，由于卷积层的不同通道对事物的感知能力是不同的，有的卷积层对翅膀可能更敏感，有的可能对嘴尖更敏感（以鸟为例），所以有图3.2（c）中对同一卷积层的通道展开，有不同灰色感知区域的差别，文章通过聚类算法对相同感知区域的卷积通道进行聚类，假设聚类中心为4（图3.2e中的四幅图），对处于同一聚类结果的不同通道卷积层进行通道级求和，就得到了图3.2e的部分，再对其进行归一化处理，sigmoid函数，产生四个不同区域的空间注意力mask，mask主要是用于定位局部特征区域，mask与卷积层的特征进行点乘，便得到了不同区域细化的卷积特征，分别进行softmax分类。</p>
+<h2 id="四-方法流程"><a href="#四-方法流程" class="headerlink" title="四 方法流程"></a>四 方法流程</h2><h3 id="4-1-通道级特征选取"><a href="#4-1-通道级特征选取" class="headerlink" title="4.1 通道级特征选取"></a>4.1 通道级特征选取</h3><p>个人认为是文章最具有创新性的部分</p>
+<p>channel grouping 预训练</p>
+<p>直接用初始化参数训练，容易造成这部分陷入局部最优解，这就需要对其进行提前的预训练处理</p>
+<p>预训练过程中，feature map 每一个channel都会产生信息突出点，也就是被激活的区域，我们可以将激活值最高的区域的（）坐标作为这个channel代表特征，用于参与聚类。<br><img src="/images/MACNN/first.png" alt="4.1"><br>将图4.1的channel 代表特征进行聚类，聚成N簇，在分别对其每一簇进行编码<br><img src="/images/MACNN/second.png" alt="4.2"><br>若向量的channel 属于当前簇，则将其设为1，否者设为0，也就是说，假设只有A,B两簇，A簇为【1,0,0,0,1】，那么B簇的编码必为【0,1,1,1,0],即编码后的N簇是互斥的。但是这样的处理方式存在一个问题，那就是无法在同一网络进行端对端的训练。<br>所以文章采用了用全连接层替代强行0.1编码的方式，改用N组全连接层，每个全连接层收网络的特征，生成一个权重向量di<br><img src="/images/MACNN/third.png" alt="4.3"><br>为了让获得的di更加准确，文章需要对全连接层的参数进行预训练，即图4.3的值尽可能的趋近于图4.2的值。经过这样的处理后，我们得到了N个部分的卷积特征掩码，通过图4.4，即feature map 与mask点乘后，通道求和。在经过sigmoid进行归一化处理得到 probabilities map。<br><img src="/images/MACNN/forth.png" alt="4.4"><br>综合起来得到图4.5，channe group 特征的获取方式</p>
+<p><img src="/images/MACNN/fifth.png" alt="4.5"><br>其中，W为全脸层参数，X为输入卷积特征，M为得到的channel attention mask</p>
+<h3 id="4-2-损失函数"><a href="#4-2-损失函数" class="headerlink" title="4.2 损失函数"></a>4.2 损失函数</h3><p><img src="/images/MACNN/sixth.png" alt="4.6"><br>整体损失函数如图4.6所示共有以下两部分构成</p>
+<h4 id="分类损失"><a href="#分类损失" class="headerlink" title="分类损失"></a>分类损失</h4><p>常见的交叉熵分类损失，N个part损失共同求和优化</p>
+<h4 id="channel-group-part-损失"><a href="#channel-group-part-损失" class="headerlink" title="channel group part 损失"></a>channel group part 损失</h4><p>为了使 channel group part 同一part 距离更近，不同part距离更远，文章提出了DIS 和 DIV 两种损失函数如图4.8,4.9所示</p>
+<p><img src="/images/MACNN/eighth.png" alt="4.8"><br><img src="/images/MACNN/ninth.png" alt="4.9"></p>
+<p> 这部分整体损失函数为图4.10</p>
+<p><img src="/images/MACNN/seventh.png" alt="4.10"></p>
+<h3 id="训练方式"><a href="#训练方式" class="headerlink" title="训练方式"></a>训练方式</h3><p>文章采用了交替训练的方式，即分类部分与channel group 部分相互强化训练的方式，固定一部分，训练另一部分，直到二者损失均平稳，认为训练完成</p>
+<h2 id="五-总结"><a href="#五-总结" class="headerlink" title="五 总结"></a>五 总结</h2><p>文章在channel group 那部分设置十分巧妙，通过N组全连接层去替代1.0编码 以及在文章区域信息的把握上值得学习与借鉴。</p>
+
             </div>
             <hr />
 
@@ -589,9 +631,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Marginal Center Loss for Deep Remote Sensing Image Scene Classification》
+                    《MACNN-Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/10/14/Marginal-Center-Loss-for-Deep-RemoteSensing-Image-Scene-Classification/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/05/MACNN-Learning-Multi-Attention-Convolutional-Neural-Network-for-Fine-Grained-Image-Recognition/" property="cc:attributionName"
                rel="cc:attributionURL">
                 秋歌
             </a> 采用
@@ -894,34 +936,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/10/22/leecode刷题日记/">
+                <a href="/2019/09/06/Lookign-for-the-Devil-in-the-Details-Learning-Trilinear-Attention-Sampling-Network-for-Fine-grained-Image-Recongnition/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="leecode刷题日记(1)">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Lookign for the Devil in the Details:Learning Trilinear Attention Sampling Network for Fine-grained Image Recongnition">
                         
-                        <span class="card-title">leecode刷题日记(1)</span>
+                        <span class="card-title">Lookign for the Devil in the Details:Learning Trilinear Attention Sampling Network for Fine-grained Image Recongnition</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            废话不多说，人生苦短我用python  立下此贴作为学习见证以及补充
-刷题顺序就从TOP100开始刷起  之前刷的25道 回顾的时候再补充上,先从简单题刷起来
-一.矩阵旋转问题1.1 题目说明给定一个 n × n 的二维矩阵表示一个图像。
-
+                            Lookign-for-the-Devil-in-the-Details-Learning-Trilinear-Attention-Sampling-Network-for-Fine-grained-Image-Recongnition 是
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-22
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/leecode/" class="post-category" target="_blank">
-                                    leecode
+                            <a href="/categories/论文分享/" class="post-category" target="_blank">
+                                    论文分享
                                 </a>
                             
                             
@@ -931,12 +970,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/论文分享/" target="_blank">
+                        <span class="chip bg-color">论文分享</span>
                     </a>
                     
-                    <a href="/tags/leecode第一天/" target="_blank">
-                        <span class="chip bg-color">leecode第一天</span>
+                    <a href="/tags/深度学习/" target="_blank">
+                        <span class="chip bg-color">深度学习</span>
+                    </a>
+                    
+                    <a href="/tags/细粒度/" target="_blank">
+                        <span class="chip bg-color">细粒度</span>
                     </a>
                     
                 </div>
@@ -950,33 +993,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/05/C-三目运算符/">
+                <a href="/2019/08/28/python将批量图片以txt文件存储，并读取/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="C++三目运算符">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="python将批量图片以txt文件存储，并读取">
                         
-                        <span class="card-title">C++三目运算符</span>
+                        <span class="card-title">python将批量图片以txt文件存储，并读取</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            上一次学习C++ 还是大一，现在都研二老狗了、、哎时光荏苒想当年好几本C++ 都被撕了用来垫饭了，可惜了。果然出来混都是要还的，废话不多说了。
-当前常看到的三目运算符是这个样子的
-c = a&lt;b?a:b这个运算符号的意思是对比a.b两
+                            将图片存储为txt的原因在将图片数据输入卷积神经网络时，如果通过np.load进行输入，常常会出现内存爆炸的问题，为节约内存，将图片按照txt文件读取，是一种非常好的读取方式，当然啊，如今ternsorflow出的API也相当不错。技多不压
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/编程学习笔记/" class="post-category" target="_blank">
-                                    编程学习笔记
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
                                 </a>
                             
                             
@@ -986,12 +1027,12 @@ c = a&lt;b?a:b这个运算符号的意思是对比a.b两
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/" target="_blank">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/三目运算符/" target="_blank">
-                        <span class="chip bg-color">三目运算符</span>
+                    <a href="/tags/深度学习编程/" target="_blank">
+                        <span class="chip bg-color">深度学习编程</span>
                     </a>
                     
                 </div>
@@ -1146,7 +1187,7 @@ c = a&lt;b?a:b这个运算符号的意思是对比a.b两
             &copy; 2019 QiuGe. All Rights Reserved.
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.1k</span>
+            <span class="white-color">9.2k</span>
             
 
             <br>
